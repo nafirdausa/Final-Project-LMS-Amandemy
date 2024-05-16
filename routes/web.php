@@ -20,3 +20,12 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('v_login');
 });
+Route::get('/course', function () {
+    return view('v_course');
+});
+Route::get('/detail', function () {
+    return view('v_detail_course');
+});
+Route::get('/forum', function () {
+    return view('v_course_forum');
+});
