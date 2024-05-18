@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,19 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Authentication
+Route::get('/login', [AuthController::class, 'login'])->name('v_login');
+Route::post('/login', [AuthController::class, 'authenticate'])->name('login.auth');
+
 Route::get('/', function () {
-    return view('v_home');
+    return view('user_siswa.v_home');
 });
 
-Route::get('/login', function () {
-    return view('v_login');
-});
+
 Route::get('/course', function () {
-    return view('v_course');
+    return view('user_siswa.v_course');
 });
 Route::get('/detail', function () {
-    return view('v_detail_course');
+    return view('user_siswa.v_detail_course');
 });
 Route::get('/forum', function () {
-    return view('v_course_forum');
+    return view('user_siswa.v_course_forum');
 });
