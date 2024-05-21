@@ -8,25 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    {{-- <style>
-        .left-div {
-            background: linear-gradient(to bottom, #2E3FC2, #8F94B9);
-            color: white;
-            padding: 40px;
-            height: 100vh;
-            /* Tinggi 100% viewport */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .right-div {
-            padding: 20px;
-            height: 100vh;
-            /* Tinggi 100% viewport */
-        }
-    </style> --}}
+    
 </head>
 
 <body>
@@ -38,7 +20,6 @@
                     <img src="/assets/img/logo_lms1.png" alt="Logo" width="60">
                 </div>
                 <div class="mt-5 text-white">
-                    <!-- <p>Ini adalah teks di dalam div kiri.</p> -->
                     <h3>Learning online is easier <br>
                         than ever before with LMS!</h3>
                 </div>

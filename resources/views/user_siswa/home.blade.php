@@ -5,12 +5,16 @@
     <div class="welcome-section">
         <div>
             <p>Selamat Datang 👋</p>
-            <h1>Killua Zoldyck</h1>
+            <h1>{{ Auth::user()->username }}</h1>
             <a href="#">Pergi ke course saya →</a>
         </div>
         <div class="welcome-image">
             <p>IMAGE</p>
         </div>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
     </div>
 
     <div class="courses-section">

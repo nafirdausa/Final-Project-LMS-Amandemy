@@ -2,45 +2,50 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class AuthController extends Controller
 {
-    public function login() {
-        return view('auth.v_login');
+    public function loginPage()
+    {
+        return view('auth.login');
     }
 
-    public function authenticate(Request $request) {
-        $validator = Validator::make($request->all(), [
-            'username' => 'required',
-            'password' => 'required',
-            'role' => 'required',
-        ]);
+    public function login(Request $request)
+    {
+        $authenticate = $request->only('username', 'password');
 
-        if ($validator->fails()) {
-            return redirect()->route('v_login')
-                ->withErrors($validator)
-                ->withInput();
-        }
+        $user = User::where('username', $authenticate['username'])->first();
 
-        if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
-            $user = Auth::user();
-            if ($user->role === $request->role) {
-                $request->session()->regenerate();
+        if ($user && Hash::check($authenticate['password'], $user->password)) {
+            Auth::login($user);
 
-                if ($user->role === 'Guru') {
-                    return redirect()->route('user_guru.v_home')->with('success', 'Login success');
-                } elseif ($user->role === 'Siswa') {
-                    return redirect()->route('user_siswa.v_home')->with('success', 'Login success');
-                }
+            if ($user->role == 'guru') {
+                return redirect()->route('user_guru.home');
             } else {
-                Auth::logout();
-                return redirect()->route('v_login')->with('error', 'Role does not match');
+                return redirect()->route('user_siswa.home');
             }
         }
-        return redirect()->route('v_login')->with('error', 'Login failed, username or password is incorrect');
+
+        return redirect()->back()->withErrors(['error' => 'Invalid login. Username or password not found!']);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
+
+    public function guruDashboard()
+    {
+        return view('user_guru.home');
+    }
+
+    public function siswaDashboard()
+    {
+        return view('user_siswa.home');
     }
 }
