@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'E-Learning Dashboard')
+@section('title', 'LMS Dashboard')
 
 @section('content')
     <div class="welcome-section">
