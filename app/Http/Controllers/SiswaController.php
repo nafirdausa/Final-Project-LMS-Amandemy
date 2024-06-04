@@ -30,4 +30,14 @@ class SiswaController extends Controller
     {
         return view('user_siswa.portofolio');
     }
+    
+    public function showQuizPage() 
+    {
+        return view('user_siswa.quiz');
+    }
+    
+    public function showAddQuizPage() 
+    {
+        return view('user_siswa.quiz-add');
+    }
 }

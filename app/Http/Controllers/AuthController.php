@@ -48,4 +48,9 @@ class AuthController extends Controller
     {
         return view('user_siswa.home');
     }
+
+    public function forgotPassword()
+    {
+        return view('auth.forgot_password');
+    }
 }
