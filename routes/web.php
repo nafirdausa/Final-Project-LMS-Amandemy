@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HeroController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SiswaController;
 
@@ -15,11 +16,9 @@ use App\Http\Controllers\SiswaController;
 |
 */
 
-// Authentication
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', [HeroController::class, 'heroPage'])->name('hero');
 
+// Authentication
 Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.auth');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
