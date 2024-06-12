@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
 {
+    public function showHeroPage(User $user){
+        $user = User::all();
+        return view('user_siswa.hero',['user'=>$user]);
+    }
     public function showCourcePage() 
     {
         return view('user_siswa.course');

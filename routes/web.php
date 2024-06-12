@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SiswaController;
 
 /*
@@ -35,9 +36,13 @@ Route::middleware(['auth', 'role:siswa'])->group(function () {
 
 // Dashboard Siswa
 Route::get('/course', [SiswaController::class, 'showCourcePage'])->name('dashboard.siswa.course');
+Route::get('/hero', [SiswaController::class, 'showHeroPage'])->name('dashboard.siswa.hero');
 Route::get('/detail', [SiswaController::class, 'showDetailCourcePage'])->name('dashboard.siswa.detail_course');
 Route::get('/forum', [SiswaController::class, 'showForumPage'])->name('dashboard.siswa.forum');
 Route::get('/report', [SiswaController::class, 'showReportPage'])->name('dashboard.siswa.report');
 Route::get('/portofolio', [SiswaController::class, 'showPortofolioPage'])->name('dashboard.siswa.portofolio');
 Route::get('/quiz', [SiswaController::class, 'showQuizPage'])->name('dashboard.siswa.quiz');
 Route::get('/add-quiz', [SiswaController::class, 'showAddQuizPage'])->name('dashboard.siswa.quiz-add');
+
+// Dashboard Guru
+Route::get('/guru',[GuruController::class, 'dashboard'])->name('dashboard.guru.home');
