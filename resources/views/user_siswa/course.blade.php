@@ -2,38 +2,99 @@
 @section('title', 'My Course')
 
 @section('content')
-<section class="py-5">
-    <div class="container mt-5">
-        <div class="text-center mb-4">
+<section>
+    <div class="container mx-auto mt-12">
+        <div class="text-center mb-8">
             <h2 class="text-3xl font-bold">My Course</h2>
         </div>
-        <div class="card p-3">
-            <div class="flex mb-3">
-                <div class="w-1/4">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full">ALL</button>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex flex-wrap mb-6 gap-4">
+                <div class="w-20 mb-4">
+                    <select class="bg-blue-500 text-white py-1 px-4 w-20 rounded">
+                        <option>ALL</option>
+                    </select>
                 </div>
-                <div class="w-2/4">
-                    <input type="text" class="form-input w-full" placeholder="Search">
+                <div class="w-48 mb-4">
+                    <input type="text" class="form-input w-48 border border-gray-500 rounded p-1" placeholder="Search">
                 </div>
-                <div class="w-1/4">
-                    <select class="form-select w-full">
+                <div class="w-48">
+                    <select class="form-select w-48 border border-gray-500 rounded p-1">
                         <option>Sort By Course Name</option>
                     </select>
                 </div>
             </div>
             <div class="flex flex-wrap">
-                <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-4">
+                <div class="w-full md:w-1/3 mb-4">
                     <a href="{{ route('dashboard.siswa.detail_course') }}">
-                        <div class="bg-white rounded-lg shadow-md p-4">
-                            <div class="h-40 bg-gray-300 mb-4 rounded"></div>
-                            <h5 class="text-xl font-bold">Manajemen Sosial Kelas X IPS</h5>
-                            <div class="w-full h-6 bg-gray-200 rounded-full mt-2">
-                                <div class="w-1/7 bg-blue-500 h-full rounded-full"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                            <div class="h-32 bg-gray-200 mb-4 flex justify-center items-center">
+                                <img src="image/pattern-course.png" alt="" class="w-full h-full object-cover">
                             </div>
+                            <h5 class="text-lg font-semibold mb-2">Manajemen Sosial Kelas X IPS</h5>
+                            <div class="h-4 bg-gray-300 rounded">
+                                <div class="bg-blue-500 h-full rounded" style="width: 14%;"></div>
+                            </div>
+                            <span class="text-sm text-gray-600">14% complete</span>
                         </div>
                     </a>
                 </div>
-                <!-- Repeat this course card block for other courses -->
+                <!-- Repeat for other course cards -->
+                <div class="w-full md:w-1/3 mb-4">
+                    <a href="{{ route('dashboard.siswa.detail_course') }}">
+                        <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                            <div class="h-32 bg-gray-200 mb-4 flex justify-center items-center">
+                                <img src="image/pattern-course.png" alt="" class="w-full h-full object-cover">
+                            </div>
+                            <h5 class="text-lg font-semibold mb-2">Manajemen Sosial Kelas X IPS</h5>
+                            <div class="h-4 bg-gray-300 rounded">
+                                <div class="bg-blue-500 h-full rounded" style="width: 14%;"></div>
+                            </div>
+                            <span class="text-sm text-gray-600">14% complete</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/3 mb-4">
+                    <a href="{{ route('dashboard.siswa.detail_course') }}">
+                        <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                            <div class="h-32 bg-gray-200 mb-4 flex justify-center items-center">
+                                <img src="image/pattern-course.png" alt="" class="w-full h-full object-cover">
+                            </div>
+                            <h5 class="text-lg font-semibold mb-2">Manajemen Sosial Kelas X IPS</h5>
+                            <div class="h-4 bg-gray-300 rounded">
+                                <div class="bg-blue-500 h-full rounded" style="width: 14%;"></div>
+                            </div>
+                            <span class="text-sm text-gray-600">14% complete</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/3 mb-4">
+                    <a href="{{ route('dashboard.siswa.detail_course') }}">
+                        <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                            <div class="h-32 bg-gray-200 mb-4 flex justify-center items-center">
+                                <img src="image/pattern-course.png" alt="" class="w-full h-full object-cover">
+                            </div>
+                            <h5 class="text-lg font-semibold mb-2">Manajemen Sosial Kelas X IPS</h5>
+                            <div class="h-4 bg-gray-300 rounded">
+                                <div class="bg-blue-500 h-full rounded" style="width: 14%;"></div>
+                            </div>
+                            <span class="text-sm text-gray-600">14% complete</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/3 mb-4">
+                    <a href="{{ route('dashboard.siswa.detail_course') }}">
+                        <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                            <div class="h-32 bg-gray-200 mb-4 flex justify-center items-center">
+                                <img src="image/pattern-course.png" alt="" class="w-full h-full object-cover">
+                            </div>
+                            <h5 class="text-lg font-semibold mb-2">Manajemen Sosial Kelas X IPS</h5>
+                            <div class="h-4 bg-gray-300 rounded">
+                                <div class="bg-blue-500 h-full rounded" style="width: 14%;"></div>
+                            </div>
+                            <span class="text-sm text-gray-600">14% complete</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
