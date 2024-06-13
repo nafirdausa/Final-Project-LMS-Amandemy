@@ -1,20 +1,30 @@
 @extends('layouts.master')
-
-@section('title', 'Home')
+@section('title', 'Welcome Page')
 
 @section('content')
-    <div class="welcome-section flex items-center justify-evenly bg-orange-500 py-12 rounded-lg mb-8 flex-wrap">
-        <div>
-            <h1 class="text-6xl font-bold mb-5">Hai, Pencari Ilmu Sejati!</h1>
-            <h2 class="text-6xl font-bold mb-8">Time To Grow Up 🙌</h2><br>
-            <p class="text-xl mb-8">Kami siap membantu kamu dalam proses belajar <br> dengan menyediakan metode yang efektif dan efisien,<br> sehingga kamu dapat menguasai materi dengan lebih mudah dan cepat,<br> serta mencapai hasil yang optimal dalam waktu yang lebih singkat!</p>
-            <button class="bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 hover:text-white">Mulai Belajar</button>
+
+{{-- <div class="welcome-section flex items-center justify-evenly bg-orange-500 py-12 rounded-lg mb-8 flex-wrap">
+    <div>
+        <h1 class="text-6xl font-bold mb-5">Hai, Pencari Ilmu Sejati!</h1>
+        <h2 class="text-6xl font-bold mb-8">Time To Grow Up 🙌</h2><br>
+        <p class="text-xl mb-8">Kami siap membantu kamu dalam proses belajar <br> dengan menyediakan metode yang efektif dan efisien,<br> sehingga kamu dapat menguasai materi dengan lebih mudah dan cepat,<br> serta mencapai hasil yang optimal dalam waktu yang lebih singkat!</p>
+        <button class="bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 hover:text-white">Mulai Belajar</button>
+    </div>
+    <div class="welcome-image">
+        <img src="{{asset('assets/images/hero.jpg')}}" alt="gambar hero" width="550" height="550"> --}}
+<div class="hero container mx-auto">
+    <div class="flex flex-col md:flex-row items-center py-12" style="height: 600px">
+        <div class="md:w-2/3 flex flex-col justify-center px-5">
+            <h1 class="font-bold text-5xl">Hai Pencari Ilmu Sejati!<br>It's Time To Grow Up🙌</h1>
+            <p class="font-semibold my-3 text-gray-500">Kami siap bantu kamu belajar <br> secara efektif dan efisien dengan Mudah!</p>
+            <a href="{{ route('user_siswa.home') }}" class="w-36 bg-blue-700 text-white text-md font-bold py-2 pl-6 rounded mt-4">
+                Mulai Belajar
+            </a>
         </div>
-        <div class="welcome-image">
-            <img src="{{asset('assets/images/hero.jpg')}}" alt="gambar hero" width="550" height="550">
+        <div class="md:w-1/3 flex justify-center">
+            <img class="w-full h-auto rounded" src="/assets/images/home-greeting-image.png" alt="Hero image">
         </div>
     </div>
-
     <div class="py-12">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-4xl font-bold mb-4">Perhatian Kami adalah Pendidikan Anda</h2>
@@ -81,4 +91,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
