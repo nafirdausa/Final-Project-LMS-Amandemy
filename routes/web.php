@@ -47,3 +47,7 @@ Route::get('/add-quiz', [SiswaController::class, 'showAddQuizPage'])->name('dash
 
 // Dashboard Guru
 Route::get('/guru',[GuruController::class, 'dashboard'])->name('dashboard.guru.home');
+Route::get('/guru-mapel',[GuruController::class, 'mapel'])->name('dashboard.guru.mapel');
+Route::get('/guru-tugas',[GuruController::class, 'tugas'])->name('dashboard.guru.tugas');
+Route::get('/guru-ujian',[GuruController::class, 'ujian'])->name('dashboard.guru.ujian');
+Route::get('/guru-raport',[GuruController::class, 'raport'])->name('dashboard.guru.raport');

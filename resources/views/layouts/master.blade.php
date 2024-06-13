@@ -11,14 +11,16 @@
 
 <body class="font-sans text-gray-800">
     <header class="flex justify-between items-center p-4 bg-white text-blue-900 shadow-md sticky top-0 z-50">
-        <div class="text-xl font-bold">LMS</div>
+        <div >
+            <img src="{{asset('assets/img/studyroom.jpg')}}" alt="logo" width="150" height="150">
+        </div>
         <nav class="flex items-center">
             <a href="{{ route('user_siswa.home') }}" class="mr-4 text-gray-600 hover:text-blue-700">Home</a>
             <a href="{{ route('dashboard.siswa.course') }}" class="mr-4 text-gray-600 hover:text-blue-700">Course</a>
             <a href="{{ route('dashboard.siswa.report') }}" class="mr-4 text-gray-600 hover:text-blue-700">Report</a>
             <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700">Portofolio</a>
             <div class="ml-4">
-                <img src="image/profile.png" alt="Profile Picture" class="w-10 h-10 rounded-full">
+                <img src="{{asset('assets/images/default_profile.png')}}" alt="Profile Picture" class="w-10 h-10 rounded-full">
             </div>
         </nav>
     </header>

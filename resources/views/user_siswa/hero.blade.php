@@ -5,51 +5,51 @@
 @section('content')
     <div class="welcome-section flex items-center justify-evenly bg-orange-500 py-12 rounded-lg mb-8 flex-wrap">
         <div>
-            <h1 class="text-5xl font-bold mb-4">Hai, Pencari Ilmu Sejati!</h1>
-            <h2 class="text-4xl font-bold mb-8">It's Time To Grow Up 🙌</h2>
-            <p class="text-lg mb-8">Kami siap bantu kamu belajar <br> secara efektif dan efisien dengan Mudah!</p>
+            <h1 class="text-6xl font-bold mb-5">Hai, Pencari Ilmu Sejati!</h1>
+            <h2 class="text-6xl font-bold mb-8">Time To Grow Up 🙌</h2><br>
+            <p class="text-xl mb-8">Kami siap membantu kamu dalam proses belajar <br> dengan menyediakan metode yang efektif dan efisien,<br> sehingga kamu dapat menguasai materi dengan lebih mudah dan cepat,<br> serta mencapai hasil yang optimal dalam waktu yang lebih singkat!</p>
             <button class="bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 hover:text-white">Mulai Belajar</button>
         </div>
         <div class="welcome-image">
-            <img src="{{asset('assets/images/hero.jpg')}}" alt="gambar hero" width="450" height="450">
+            <img src="{{asset('assets/images/hero.jpg')}}" alt="gambar hero" width="550" height="550">
         </div>
     </div>
 
     <div class="py-12">
         <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-4">Our Only Concern is Your Education</h2>
-            <p class="text-lg mb-8">We helps people build successful future and achieve the financial freedom <br> to do what they want, whenever in the world they want</p>
+            <h2 class="text-4xl font-bold mb-4">Perhatian Kami adalah Pendidikan Anda</h2>
+            <p class="text-lg mb-8">Kami membantu orang membangun masa depan yang sukses dan mencapai kebebasan finansial <br> untuk melakukan apa yang mereka inginkan, dimanapun yang mereka inginkan</p>
         </div><br>
 
         <div class="max-w-6xl mx-auto grid grid-rows-3 grid-flow-col gap-8 justify-center">
             <div class="flex flex-col items-center md:flex-row md:col-span-1">
                 <div class="w-full md:w-1.5/3">
-                    <img src="{{ asset('assets/images/portofolio-img.png
-                    ') }}" alt="Education Image 1" class="rounded-lg mb-4 md:mb-0 md:mr-4">
+                    <img src="{{ asset('assets/images/minat.jpg
+                    ') }}" alt="Education Image 1" class="rounded-lg mb-4 md:mb-0 md:mr-4" >
                 </div>
                 <div class="w-full md:w-1.5/3">
-                    <h3 class="text-xl font-bold mb-2">01 Plan Your Major</h3>
-                    <p class="text-gray-600 ml-7">Our mission is to provide best, world-class education to anyone, anywhere. As an education student at LMS System you'll be able to take your classes through our customized learning platform.</p>
+                    <h3 class="text-xl font-bold mb-2">01 Tentukan Minatmu</h3>
+                    <p class="text-gray-600 ml-7">Disini kami berkomitmen untuk memberikan pendidikan terbaik bagi kalian. Mulai perjalanan belajarmu dengan menentukan minatmu sejak awal, baik itu di bidang Bahasa, IPA, atau IPS. Melalui platform pembelajaran yang disesuaikan, kamu akan mendapatkan pengalaman belajar yang efektif dan efisien untuk mempersiapkan masa depan yang gemilang.</p>
                 </div>
             </div>
 
             <div class="flex flex-col items-center justify-items-center justify-center md:flex-row md:col-span-1">
                 <div class="w-full md:w-1.5/3">
-                    <img src="{{ asset('assets/images/portofolio-img.png') }}" alt="Education Image 2" class="rounded-lg mb-4 md:mb-0 md:mr-4 md:ml-40">
+                    <img src="{{ asset('assets/images/inovasi.jpg') }}" alt="Education Image 2" class="rounded-lg mb-4 md:mb-0 md:mr-4 md:ml-40">
                 </div>
                 <div class="w-full md:w-1.5/3">
-                    <h3 class="text-xl font-bold mb-2">02 Innovate and Stimulate Discussions</h3>
-                    <p class="text-gray-600 ml-7">The world of open education has exploded since then, so today our curated lists of online courses are hand selected by our staff to show you the very best offerings by subject area.</p>
+                    <h3 class="text-xl font-bold mb-2">02 Berinovasi dan Menstimulasi Diskusi</h3>
+                    <p class="text-gray-600 ml-7">Disini kamu didorong untuk berpikir kreatif dan kritis. Platform ini dirancang untuk memfasilitasi inovasi dan menstimulasi diskusi, memungkinkan kamu untuk berkolaborasi, bertukar ide, dan memecahkan masalah bersama.</p>
                 </div>
             </div>
 
             <div class="flex flex-col items-center md:flex-row md:col-span-1">
                 <div class="w-full md:w-1.5/3">
-                    <img src="{{ asset('assets/images/portofolio-img.png') }}" alt="Education Image 3" class="rounded-lg mb-4 md:mb-0 md:mr-4">
+                    <img src="{{ asset('assets/images/feedback.jpg') }}" alt="Education Image 3" class="rounded-lg mb-4 md:mb-0 md:mr-4">
                 </div>
                 <div class="w-full md:w-1.5/3 justify-items-end">
-                    <h3 class="text-xl font-bold mb-2">03 Ask For Help and Feedback</h3>
-                    <p class="text-gray-600 ml-7">Learn new skills and change your life for better. Get skills in Science, Social and Language.</p>
+                    <h3 class="text-xl font-bold mb-2">03 Minta Bantuan dan Umpan Balik</h3>
+                    <p class="text-gray-600 ml-7">Kami memahami bahwa setiap siswa memiliki kebutuhan belajar yang unik. Disini, siswa dapat dengan mudah meminta bantuan dan mendapatkan umpan balik dari guru dan teman.</p>
                 </div>
             </div>
         </div>
