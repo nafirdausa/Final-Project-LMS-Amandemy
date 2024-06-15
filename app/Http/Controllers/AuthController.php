@@ -39,16 +39,6 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
-    public function guruDashboard()
-    {
-        return view('user_guru.home');
-    }
-
-    public function siswaDashboard()
-    {
-        return view('user_siswa.home');
-    }
-
     public function forgotPassword()
     {
         return view('auth.forgot_password');

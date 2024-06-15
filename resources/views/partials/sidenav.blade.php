@@ -13,7 +13,7 @@
         <div class="items-center block w-auto max-h-screen overflow-auto grow basis-full">
           <ul class="flex flex-col pl-0 mb-0">
             <li class="mt-0.5 w-full">
-              <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center shadow-soft-xl whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors" {{ Request::is('/guru')? 'active' : '' }} href="{{route('dashboard.guru.home')}}">
+              <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center shadow-soft-xl whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors" {{ Request::is('/guru')? 'active' : '' }} href="{{route('user_guru.home')}}">
                 <div class="bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                   <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <title>shop</title>

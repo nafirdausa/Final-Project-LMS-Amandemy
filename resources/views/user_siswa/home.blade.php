@@ -15,10 +15,6 @@
         <div class="max-w-xs">
             <img src="/assets/images/home-greeting-image.png" alt="Welcome Illustration" class="mt-4 md:mt-0">
         </div>
-        <form method="POST" action="{{ route('logout') }}" class="mt-4">
-            @csrf
-            <button type="submit" class="inline-block px-4 py-2 bg-red-600 text-white rounded">Logout</button>
-        </form>
     </section>
 
     <section class="mb-8">

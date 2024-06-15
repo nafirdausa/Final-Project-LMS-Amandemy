@@ -17,13 +17,22 @@
         </div>
         <nav class="flex items-center text-white">
             @auth
-                <a href="{{ route('user_siswa.home') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Home</a>
-                <a href="{{ route('dashboard.siswa.course') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Course</a>
-                <a href="{{ route('dashboard.siswa.report') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Report</a>
-                <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700 active:text-blue-700">Portofolio</a>
-                <div class="profile ml-4">
-                    <img src="{{asset('assets/images/default_profile.png')}}" alt="Profile Picture" class="w-10 h-10 rounded-full">
-                </div>
+                @if (Auth::user()->role == 'siswa')
+                    <a href="{{ route('user_siswa.home') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Home</a>
+                    <a href="{{ route('dashboard.siswa.course') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Course</a>
+                    <a href="{{ route('dashboard.siswa.report') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Report</a>
+                    <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700 active:text-blue-700">Portofolio</a>
+                    <div class="profile ml-4">
+                        <button class="text-white font-semibold rounded inline-flex items-center" type="button" id="dropdownButton">
+                            <img src="{{asset('assets/images/default_profile.png')}}" alt="Profile Picture" class="w-10 h-10 rounded-full">
+                        </button>
+                        <div class="dropdown-menu absolute right-3 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden" id="dropdownMenu">
+                            <div class="py-1">
+                                <a href="{{ route('logout') }}" class="block px-4 py-1 text-sm text-gray-700 hover:bg-red-500">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                @endif
             @else
                 <a href="{{ route('user_siswa.home') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Home</a>
                 <a href="{{ route('dashboard.siswa.course') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Course</a>
@@ -70,6 +79,12 @@
             <p>Fakultas Teknik & Teknologi Informasi, Universitas Jendral Achmad Yani Yogyakarta @ 2018 - 2023.</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('dropdownButton').addEventListener('click', function() {
+            document.getElementById('dropdownMenu').classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>
