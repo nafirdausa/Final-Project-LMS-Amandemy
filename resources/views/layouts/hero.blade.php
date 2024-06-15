@@ -59,24 +59,14 @@
             <h2 class="text-3xl font-bold mb-4">Karya-Karya Siswa</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <img src="{{ asset('assets/images/portofolio-img.png') }}" alt="Portofolio Image" class="rounded-lg w-full mb-4">
-                    <h3 class="text-xl font-bold mb-2">Portofolio Website</h3>
-                    <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#" class="text-blue-500 hover:text-blue-700">Selengkapnya > Lihat Portofolio</a>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <img src="{{ asset('assets/images/portofolio-img.png') }}" alt="Portofolio Image" class="rounded-lg w-full mb-4">
-                    <h3 class="text-xl font-bold mb-2">Portofolio Website</h3>
-                    <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#" class="text-blue-500 hover:text-blue-700">Selengkapnya > Lihat Portofolio</a>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <img src="{{ asset('assets/images/portofolio-img.png') }}" alt="Portofolio Image" class="rounded-lg w-full mb-4">
-                    <h3 class="text-xl font-bold mb-2">Portofolio Website</h3>
-                    <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#" class="text-blue-500 hover:text-blue-700">Selengkapnya > Lihat Portofolio</a>
-                </div>
+                @foreach ($portofolios as $portofolio)
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <img src="{{ asset($portofolio->gambar) }}" alt="Portofolio Image" class="rounded-lg w-full mb-4">
+                        <h3 class="text-xl font-bold mb-2">{{ $portofolio->judul }}</h3>
+                        <p class="text-gray-600 mb-4">{{ $portofolio->deskripsi }}</p>
+                        <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-blue-500 hover:text-blue-700">Selengkapnya > Lihat Portofolio</a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

@@ -7,9 +7,8 @@ use Illuminate\Http\Request;
 class GuruController extends Controller
 {
     //
-    public function dashboard(){
+    public function guruDashboard(){
         return view('user_guru.home');
-        // return view('layouts.test');
     }
     public function mapel(){
         return view('user_guru.mapel');

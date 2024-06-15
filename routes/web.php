@@ -22,32 +22,40 @@ Route::get('/', [HeroController::class, 'heroPage'])->name('hero');
 // Authentication
 Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.auth');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot.password');
 
+// Dashboard Guru
 Route::middleware(['auth', 'role:guru'])->group(function () {
-    Route::get('/guru/dashboard', [AuthController::class, 'guruDashboard'])->name('user_guru.home');
+    Route::get('/guru',[GuruController::class, 'guruDashboard'])->name('user_guru.home');
+    Route::get('/guru-mapel',[GuruController::class, 'mapel'])->name('dashboard.guru.mapel');
+    Route::get('/guru-tugas',[GuruController::class, 'tugas'])->name('dashboard.guru.tugas');
+    Route::get('/guru-ujian',[GuruController::class, 'ujian'])->name('dashboard.guru.ujian');
+    Route::get('/guru-raport',[GuruController::class, 'raport'])->name('dashboard.guru.raport');
 });
 
 // Dashboard Siswa
 Route::middleware(['auth', 'role:siswa'])->group(function () {
-    Route::get('/siswa/dashboard', [AuthController::class, 'siswaDashboard'])->name('user_siswa.home');
+    Route::get('/siswa', [SiswaController::class, 'siswaDashboard'])->name('user_siswa.home');
     Route::get('/course', [SiswaController::class, 'showCourcePage'])->name('dashboard.siswa.course');
     Route::get('/hero', [SiswaController::class, 'showHeroPage'])->name('dashboard.siswa.hero');
     Route::get('/detail', [SiswaController::class, 'showDetailCourcePage'])->name('dashboard.siswa.detail_course');
     Route::get('/forum', [SiswaController::class, 'showForumPage'])->name('dashboard.siswa.forum');
     Route::get('/report', [SiswaController::class, 'showReportPage'])->name('dashboard.siswa.report');
     Route::get('/portofolio', [SiswaController::class, 'showPortofolioPage'])->name('dashboard.siswa.portofolio');
+    Route::post('/portofolio/upload', [SiswaController::class, 'uploadPortofolio'])->name('dashboard.siswa.uploadPortofolio');
     Route::get('/quiz', [SiswaController::class, 'showQuizPage'])->name('dashboard.siswa.quiz');
     Route::get('/add-quiz', [SiswaController::class, 'showAddQuizPage'])->name('dashboard.siswa.quiz-add');
 });
 
+
 // Dashboard Guru
-Route::get('/guru',[GuruController::class, 'dashboard'])->name('dashboard.guru.home');
-Route::get('/guru-mapel',[GuruController::class, 'mapel'])->name('dashboard.guru.mapel');
-Route::get('/guru-tugas',[GuruController::class, 'tugas'])->name('dashboard.guru.tugas');
-Route::get('/guru-ujian',[GuruController::class, 'ujian'])->name('dashboard.guru.ujian');
-Route::get('/guru-raport',[GuruController::class, 'raport'])->name('dashboard.guru.raport');
-Route::get('/add-mapel',[GuruController::class, 'addMapel'])->name('dashboard.guru.add_mapel');
-Route::get('/add-raport',[GuruController::class, 'addRaport'])->name('dashboard.guru.add_raport');
-Route::get('/add-tugas',[GuruController::class, 'addTugas'])->name('dashboard.guru.add_tugas');
+// Route::get('/guru',[GuruController::class, 'dashboard'])->name('dashboard.guru.home');
+// Route::get('/guru-mapel',[GuruController::class, 'mapel'])->name('dashboard.guru.mapel');
+// Route::get('/guru-tugas',[GuruController::class, 'tugas'])->name('dashboard.guru.tugas');
+// Route::get('/guru-ujian',[GuruController::class, 'ujian'])->name('dashboard.guru.ujian');
+// Route::get('/guru-raport',[GuruController::class, 'raport'])->name('dashboard.guru.raport');
+// Route::get('/add-mapel',[GuruController::class, 'addMapel'])->name('dashboard.guru.add_mapel');
+// Route::get('/add-raport',[GuruController::class, 'addRaport'])->name('dashboard.guru.add_raport');
+// Route::get('/add-tugas',[GuruController::class, 'addTugas'])->name('dashboard.guru.add_tugas');
+
