@@ -23,4 +23,13 @@ class GuruController extends Controller
     public function raport(){
         return view('user_guru.raport');
     }
+    public function addMapel(){
+        return view('user_guru.form_add_mapel');
+    }
+    public function addRaport(){
+        return view('user_guru.form_add_raport');
+    }
+    public function addTugas(){
+        return view('user_guru.form_add_tugas');
+    }
 }

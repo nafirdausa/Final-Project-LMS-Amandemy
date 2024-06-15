@@ -48,3 +48,6 @@ Route::get('/guru-mapel',[GuruController::class, 'mapel'])->name('dashboard.guru
 Route::get('/guru-tugas',[GuruController::class, 'tugas'])->name('dashboard.guru.tugas');
 Route::get('/guru-ujian',[GuruController::class, 'ujian'])->name('dashboard.guru.ujian');
 Route::get('/guru-raport',[GuruController::class, 'raport'])->name('dashboard.guru.raport');
+Route::get('/add-mapel',[GuruController::class, 'addMapel'])->name('dashboard.guru.add_mapel');
+Route::get('/add-raport',[GuruController::class, 'addRaport'])->name('dashboard.guru.add_raport');
+Route::get('/add-tugas',[GuruController::class, 'addTugas'])->name('dashboard.guru.add_tugas');

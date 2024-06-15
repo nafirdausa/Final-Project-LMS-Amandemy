@@ -7,3 +7,6 @@
   <!-- main script file  -->
   <script src="./assets/js/soft-ui-dashboard-tailwind.js?v=1.0.5" async></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  {{-- datepicker --}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
+  
