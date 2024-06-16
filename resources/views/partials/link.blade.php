@@ -13,5 +13,5 @@
 <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
 <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" /> --}}
-<script src="../path/to/flowbite/dist/datepicker.js"></script>
 {{-- datepicker --}}
+<script src="../path/to/flowbite/dist/datepicker.js"></script>

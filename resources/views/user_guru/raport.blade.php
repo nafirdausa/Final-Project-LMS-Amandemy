@@ -6,7 +6,7 @@
 <div class="w-full px-6 py-6 mx-auto">
     <button>
         <div class="flex-none w-8/2 max-w-full px-3 text-right">
-            <a class="inline-block px-6 py-3 font-bold text-center text-white uppercase align-middle transition-all bg-transparent rounded-lg cursor-pointer leading-pro text-xs ease-soft-in shadow-soft-md bg-150 bg-gradient-to-tl from-gray-900 to-slate-800 hover:shadow-soft-xs active:opacity-85 hover:scale-102 tracking-tight-soft bg-x-25" href="javascript:;"> <i class="fas fa-plus"> </i>&nbsp;&nbsp;Buat Raport</a>
+            <a class="inline-block px-6 py-3 font-bold text-center text-white uppercase align-middle transition-all bg-transparent rounded-lg cursor-pointer leading-pro text-xs ease-soft-in shadow-soft-md bg-150 bg-gradient-to-tl from-gray-900 to-slate-800 hover:shadow-soft-xs active:opacity-85 hover:scale-102 tracking-tight-soft bg-x-25" href="{{route('dashboard.guru.add_raport')}}"> <i class="fas fa-plus"> </i>&nbsp;&nbsp;Tambah Raport</a>
         </div>
     </button>
     <div class="flex flex-wrap -mx-4 py-4">

@@ -31,4 +31,7 @@ class GuruController extends Controller
     public function addTugas(){
         return view('user_guru.form_add_tugas');
     }
+    public function addUjian(){
+        return view('user_guru.form_add_ujian');
+    }
 }

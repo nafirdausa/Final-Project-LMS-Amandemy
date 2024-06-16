@@ -11,23 +11,16 @@
             <form>
                 <div class="space-y-12">
                   <div class="border-b border-gray-900/10 pb-12">
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">TAMBAH TUGAS</h2>
+                    <h2 class="text-base font-semibold leading-7 text-gray-900">TAMBAH UJIAN</h2>
                     <div class="sm:col-span-3">
-                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Judul Tugas</label>
+                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Judul Ujian</label>
                         <div class="mt-2">
                             <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded border py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
                     </div>
 
                     <div class="mt-4 sm:col-span-3">
-                        <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Deskripsi Tugas</label>
-                        <div class="mt-2">
-                          <textarea id="about" name="about" rows="3" class="block w-full rounded border py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-4 sm:col-span-3">
-                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Deadline Tanggal</label>
+                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Tanggal Ujian</label>
                         <div class="relative max-w-sm">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -38,7 +31,7 @@
                         </div>
 
                         <form class="max-w-[8rem] mx-auto">
-                            <label for="time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select time:</label>
+                            <label for="time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Waktu Ujian:</label>
                             <div class="relative">
                                 <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
                                     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -51,7 +44,7 @@
                     </div>                    
 
                     <div class="mt-4 sm:col-span-3">
-                        <label for="country" class="block text-sm font-medium leading-6 text-gray-900">File Tugas</label>
+                        <label for="country" class="block text-sm font-medium leading-6 text-gray-900">File Ujian</label>
                         <div class="mt-2">
                             <input id="email" name="email" type="file" autocomplete="email" class="block w-full rounded border py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
