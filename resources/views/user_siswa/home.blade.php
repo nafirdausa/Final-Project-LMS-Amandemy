@@ -9,7 +9,7 @@
                 <h1 class="text-5xl font-bold">{{ Auth::user()->username }}</h1>
             </div>
             <div>
-                <a href="#" class="inline-block py-2 text-white hover:text-blue-700 rounded">Pergi ke course saya →</a>
+                <a href="{{ route('dashboard.siswa.course') }}" class="inline-block py-2 text-white hover:text-blue-700 rounded">Pergi ke course saya →</a>
             </div>
         </div>
         <div class="max-w-xs">
