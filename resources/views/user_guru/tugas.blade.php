@@ -7,9 +7,9 @@
     <!-- table 1 -->
     {{-- <button type="button" class="z-40 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 !important">Tambah Course</button> --}}
     <button>
-        <div class="flex-none w-8/2 max-w-full px-3 text-right">
-            <a class="inline-block px-6 py-3 font-bold text-center text-white uppercase align-middle transition-all bg-transparent rounded-lg cursor-pointer leading-pro text-xs ease-soft-in shadow-soft-md bg-150 bg-gradient-to-tl from-gray-900 to-slate-800 hover:shadow-soft-xs active:opacity-85 hover:scale-102 tracking-tight-soft bg-x-25" href="javascript:;"> <i class="fas fa-plus"> </i>&nbsp;&nbsp;Tambah Tugas</a>
-        </div>
+      <div class="flex-none w-8/2 max-w-full px-3 text-right">
+          <a class="inline-block px-6 py-3 font-bold text-center text-white uppercase align-middle transition-all bg-transparent rounded-lg cursor-pointer leading-pro text-xs ease-soft-in shadow-soft-md bg-150 bg-gradient-to-tl from-gray-900 to-slate-800 hover:shadow-soft-xs active:opacity-85 hover:scale-102 tracking-tight-soft bg-x-25" href="{{route('dashboard.guru.add_tugas')}}"> <i class="fas fa-plus"> </i>&nbsp;&nbsp;Tambah Tugas</a>
+      </div>
     </button>
     <div class="flex flex-wrap -mx-4 py-4">
       <div class="flex-none w-full max-w-full px-3">
