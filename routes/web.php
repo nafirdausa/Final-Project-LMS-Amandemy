@@ -25,6 +25,15 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.auth');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot.password');
 
+// Login with Google
+Route::get('login/google', [AuthController::class, 'loginGoogle'])->name('login_google');
+Route::get('login/google/callback', [AuthController::class, 'loginGoogleCallback'])->name('callback_google');
+
+// Login with Facebook
+Route::get('login/facebook', [AuthController::class, 'loginFacebook'])->name('login_facebook');
+Route::get('login/facebook/callback', [AuthController::class, 'loginFacebookCallback'])->name('callback_facebook');
+
+
 // Dashboard Guru
 Route::middleware(['auth', 'role:guru'])->group(function () {
     Route::get('/guru',[GuruController::class, 'guruDashboard'])->name('user_guru.home');

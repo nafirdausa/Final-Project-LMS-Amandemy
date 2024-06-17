@@ -3,7 +3,7 @@
 
 @section('content')
     <section class="bg-orange-500 text-white rounded-lg mb-8 flex flex-wrap justify-between">
-        <div class="flex flex-col justify-between p-8 max-w-xs">
+        <div class="flex flex-col justify-between p-8 max-w-base">
             <div>
                 <p class="text-xl">Selamat Datang 👋</p>
                 <h1 class="text-5xl font-bold">{{ Auth::user()->username }}</h1>
