@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Kelas;
 use App\Models\Portofolio;
 
 use Illuminate\Http\Request;
@@ -19,12 +20,14 @@ class SiswaController extends Controller
 
     public function siswaDashboard()
     {
-        return view('user_siswa.home');
+        $clases = Kelas::all();
+        return view('user_siswa.home', compact('clases'));
     }
     
     public function showCourcePage() 
     {
-        return view('user_siswa.course');
+        $clases = Kelas::all();
+        return view('user_siswa.course', compact('clases'));
     }
     
     public function showDetailCourcePage() 

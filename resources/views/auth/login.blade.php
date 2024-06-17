@@ -23,12 +23,12 @@
         <h3 class="font-extrabold text-2xl">Log in to your Account</h3>
         <p class="mb-5">Welcome! Select method to log in:</p>
         <div class="flex flex-col md:flex-row items-center md:justify-center mb-2">
-            <button type="button" class="btn-google rounded-md mr-2 bg-gray-200 me-2 px-4 py-2 mb-2 md:mb-0 md:me-2 flex items-center">
+            <a href="{{ route('login_google') }}" type="button" class="btn-google rounded-md mr-2 bg-gray-200 me-2 px-4 py-2 mb-2 md:mb-0 md:me-2 flex items-center">
                 <img class="btn bg-gray-200 mb-1 mr-2 inline-block" src="/assets/icon/google_symbol.svg.png" alt="Google" width="20">Google
-            </button>
-            <button type="button" class="btn-facebook rounded-md ml-2 bg-gray-200 ms-2 px-4 py-2 md:ms-2 flex items-center">
+            </a>
+            <a href="{{ route('login_facebook') }}" type="button" class="btn-facebook rounded-md ml-2 bg-gray-200 ms-2 px-4 py-2 md:ms-2 flex items-center">
                 <img class="btn bg-gray-200 mb-1 mr-2 inline-block" src="/assets/icon/facebook_symbol.svg.png" alt="Facebook" width="20">Facebook
-            </button>
+            </a>
         </div>
         <p class="my-4 text-gray-400">OR</p>
         <!-- error message -->
