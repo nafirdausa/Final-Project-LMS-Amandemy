@@ -37,11 +37,12 @@ Route::get('login/facebook/callback', [AuthController::class, 'loginFacebookCall
 // Dashboard Guru
 Route::middleware(['auth', 'role:guru'])->group(function () {
     Route::get('/guru',[GuruController::class, 'guruDashboard'])->name('user_guru.home');
-    Route::get('/guru-mapel',[GuruController::class, 'mapel'])->name('dashboard.guru.mapel');
+    Route::get('/guru-kelas',[GuruController::class, 'kelas'])->name('dashboard.guru.kelas');
     Route::get('/guru-tugas',[GuruController::class, 'tugas'])->name('dashboard.guru.tugas');
     Route::get('/guru-ujian',[GuruController::class, 'ujian'])->name('dashboard.guru.ujian');
     Route::get('/guru-raport',[GuruController::class, 'raport'])->name('dashboard.guru.raport');
-    Route::get('/add-mapel',[GuruController::class, 'addMapel'])->name('dashboard.guru.add_mapel');
+    Route::get('/add-kelas',[GuruController::class, 'showFormKelas'])->name('dashboard.guru.form_kelas');
+    Route::post('/add-kelas', [GuruController::class, 'addKelas'])->name('dashboard.guru.add_kelas');
     Route::get('/add-raport',[GuruController::class, 'addRaport'])->name('dashboard.guru.add_raport');
     Route::get('/add-tugas',[GuruController::class, 'addTugas'])->name('dashboard.guru.add_tugas');
     Route::get('/add-ujian',[GuruController::class, 'addUjian'])->name('dashboard.guru.add_ujian');

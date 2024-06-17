@@ -19,63 +19,37 @@
 
     <section class="mb-8">
         <h2 class="text-3xl font-bold mb-4">Courses</h2>
-        <h3 class="text-2xl text-gray-700 mb-4">TA 2023/2024 Semester Genap</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="border border-gray-500 rounded-lg">
-                    <a href="{{ route('dashboard.siswa.detail_course') }}">
-                        <div class="mb-4">
-                            <img src="/assets/images/pattern-course.png" alt="" class="w-full">
-                        </div>
-                        <h5 class="text-lg px-4 text-gray-500">Manajemen Sosial</h5>
-                        <h5 class="text-lg px-4 mb-4">Kelas X IPS</h5>
-                        <div class="relative pt-1 px-4">
-                            <div class="overflow-hidden p-2 h-2 mb-4 text-xs flex rounded-lg bg-blue-500">
-                                <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500" style="width: 14%;">100% complete</div>
+        @foreach ($clases as $class)
+            <section class="text-2xl text-gray-700 mb-4">{{ $class->tahun_ajaran }}</section>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="border border-gray-500 rounded-lg">
+                        <a href="{{ route('dashboard.siswa.detail_course') }}">
+                            <div class="mb-4">
+                                <img src="/assets/images/pattern-course.png" alt="" class="w-full">
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="border border-gray-500 rounded-lg">
-                    <a href="{{ route('dashboard.siswa.detail_course') }}">
-                        <div class="mb-4">
-                            <img src="/assets/images/pattern-course.png" alt="" class="w-full">
-                        </div>
-                        <h5 class="text-lg px-4 text-gray-500">Manajemen Sosial</h5>
-                        <h5 class="text-lg px-4 mb-4">Kelas X IPS</h5>
-                        <div class="relative pt-1 px-4">
-                            <div class="overflow-hidden p-2 h-2 mb-4 text-xs flex rounded-lg bg-blue-500">
-                                <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500" style="width: 14%;">100% complete</div>
+                            <h5 class="text-lg px-4 text-gray-500">{{ $class->nama_mapel }}</h5>
+                            <h5 class="text-lg px-4 mb-4">{{ $class->nama_kelas }}</h5>
+                            <div class="relative pt-1 px-4">
+                                <div class="overflow-hidden p-2 h-2 mb-4 text-xs flex rounded-lg bg-blue-500">
+                                    <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500" style="width: 14%;">100% complete</div>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="border border-gray-500 rounded-lg">
-                    <a href="{{ route('dashboard.siswa.detail_course') }}">
-                        <div class="mb-4">
-                            <img src="/assets/images/pattern-course.png" alt="" class="w-full">
-                        </div>
-                        <h5 class="text-lg px-4 text-gray-500">Manajemen Sosial</h5>
-                        <h5 class="text-lg px-4 mb-4">Kelas X IPS</h5>
-                        <div class="relative pt-1 px-4">
-                            <div class="overflow-hidden p-2 h-2 mb-4 text-xs flex rounded-lg bg-blue-500">
-                                <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500" style="width: 14%;">100% complete</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- Repeat for other course cards -->
-            </div>
-        </section>
-        <section>
-            <h2 class="text-3xl font-bold mb-4">Recently Accessed Courses</h2>
-            <div class="flex justify-center overflow-x-auto space-x-4 border border-gray-500 rounded-lg p-5">
-                <div class="grid grid-cols-1 md:grid-cols-1 border border-gray-500 rounded-lg">
-                    <div class="mb-4">
-                        <img src="/assets/images/pattern-course.png" alt="">
+                        </a>
                     </div>
-                    <h5 class="text-lg px-4 text-gray-500">Pelatihan</h5>
-                    <h5 class="text-lg px-4 mb-4">Pelatihan ProTOEFL</h5>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section>
+                <h2 class="text-3xl font-bold mb-4">Recently Accessed Courses</h2>
+                <div class="flex justify-center overflow-x-auto space-x-4 border border-gray-500 rounded-lg p-5">
+                    <div class="grid grid-cols-1 md:grid-cols-1 border border-gray-500 rounded-lg">
+                        <div class="mb-4">
+                            <img src="/assets/images/pattern-course.png" alt="">
+                        </div>
+                        <h5 class="text-lg px-4 text-gray-500">{{ $class->nama_mapel }}</h5>
+                        <h5 class="text-lg px-4 mb-4">{{ $class->nama_kelas }}</h5>
+                    </div>
+                </div>
+            </section>
+        @endforeach
+    </section>
 @endsection

@@ -23,79 +23,24 @@
                     </select>
                 </div>
             </div>
-            <div class="flex flex-wrap">
-                <div class="w-full md:w-1/3 mb-4">
-                    <a href="{{ route('dashboard.siswa.detail_course') }}">
-                        <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
-                            <div class="h-32 bg-gray-200 mb-4 flex justify-center items-center">
-                                <img src="image/pattern-course.png" alt="" class="w-full h-full object-cover">
+            @foreach ($clases as $class)    
+                <div class="flex flex-wrap">
+                    <div class="w-full md:w-1/3 mb-4">
+                        <a href="{{ route('dashboard.siswa.detail_course') }}">
+                            <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
+                                <div class="h-32 bg-gray-200 mb-4 flex justify-center items-center">
+                                    <img src="image/pattern-course.png" alt="" class="w-full h-full object-cover">
+                                </div>
+                                <h5 class="text-lg font-semibold mb-2">{{ $class->nama_mapel }} <span>{{ $class->nama_kelas }}</span></h5>
+                                <div class="h-4 bg-gray-300 rounded">
+                                    <div class="bg-blue-500 h-full rounded" style="width: 14%;"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">14% complete</span>
                             </div>
-                            <h5 class="text-lg font-semibold mb-2">Manajemen Sosial Kelas X IPS</h5>
-                            <div class="h-4 bg-gray-300 rounded">
-                                <div class="bg-blue-500 h-full rounded" style="width: 14%;"></div>
-                            </div>
-                            <span class="text-sm text-gray-600">14% complete</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-                <!-- Repeat for other course cards -->
-                <div class="w-full md:w-1/3 mb-4">
-                    <a href="{{ route('dashboard.siswa.detail_course') }}">
-                        <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
-                            <div class="h-32 bg-gray-200 mb-4 flex justify-center items-center">
-                                <img src="image/pattern-course.png" alt="" class="w-full h-full object-cover">
-                            </div>
-                            <h5 class="text-lg font-semibold mb-2">Manajemen Sosial Kelas X IPS</h5>
-                            <div class="h-4 bg-gray-300 rounded">
-                                <div class="bg-blue-500 h-full rounded" style="width: 14%;"></div>
-                            </div>
-                            <span class="text-sm text-gray-600">14% complete</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="w-full md:w-1/3 mb-4">
-                    <a href="{{ route('dashboard.siswa.detail_course') }}">
-                        <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
-                            <div class="h-32 bg-gray-200 mb-4 flex justify-center items-center">
-                                <img src="image/pattern-course.png" alt="" class="w-full h-full object-cover">
-                            </div>
-                            <h5 class="text-lg font-semibold mb-2">Manajemen Sosial Kelas X IPS</h5>
-                            <div class="h-4 bg-gray-300 rounded">
-                                <div class="bg-blue-500 h-full rounded" style="width: 14%;"></div>
-                            </div>
-                            <span class="text-sm text-gray-600">14% complete</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="w-full md:w-1/3 mb-4">
-                    <a href="{{ route('dashboard.siswa.detail_course') }}">
-                        <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
-                            <div class="h-32 bg-gray-200 mb-4 flex justify-center items-center">
-                                <img src="image/pattern-course.png" alt="" class="w-full h-full object-cover">
-                            </div>
-                            <h5 class="text-lg font-semibold mb-2">Manajemen Sosial Kelas X IPS</h5>
-                            <div class="h-4 bg-gray-300 rounded">
-                                <div class="bg-blue-500 h-full rounded" style="width: 14%;"></div>
-                            </div>
-                            <span class="text-sm text-gray-600">14% complete</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="w-full md:w-1/3 mb-4">
-                    <a href="{{ route('dashboard.siswa.detail_course') }}">
-                        <div class="bg-gray-100 p-4 rounded-lg text-center shadow-sm">
-                            <div class="h-32 bg-gray-200 mb-4 flex justify-center items-center">
-                                <img src="image/pattern-course.png" alt="" class="w-full h-full object-cover">
-                            </div>
-                            <h5 class="text-lg font-semibold mb-2">Manajemen Sosial Kelas X IPS</h5>
-                            <div class="h-4 bg-gray-300 rounded">
-                                <div class="bg-blue-500 h-full rounded" style="width: 14%;"></div>
-                            </div>
-                            <span class="text-sm text-gray-600">14% complete</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
