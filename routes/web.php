@@ -36,6 +36,8 @@ Route::middleware(['auth', 'role:guru'])->group(function () {
     Route::get('/add-raport',[GuruController::class, 'addRaport'])->name('dashboard.guru.add_raport');
     Route::get('/add-tugas',[GuruController::class, 'addTugas'])->name('dashboard.guru.add_tugas');
     Route::get('/add-ujian',[GuruController::class, 'addUjian'])->name('dashboard.guru.add_ujian');
+    Route::get('/tugas-siswa',[GuruController::class, 'tugasSiswa'])->name('dashboard.guru.tugas_siswa');
+    Route::get('/uas-siswa',[GuruController::class, 'uasSiswa'])->name('dashboard.guru.uas_siswa');
 });
 
 // Dashboard Siswa
