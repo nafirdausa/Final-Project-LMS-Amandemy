@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <!-- Tailwind CSS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="font-sans text-gray-800">
@@ -64,6 +67,7 @@
     </main>
     <footer class="text-white">
         <div class="bg-blue-900 p-8 flex flex-wrap justify-between">
+            <div data-aos="fade-down"></div>
             <div class="max-w-xs">
                 <div class="text-2xl font-bold mb-4">StudyRoom</div>
                 <p>E-LEARNING Fakultas Teknik & Teknologi Informasi Universitas Jenderal Achmad Yani, Yogyakarta. Jalan
@@ -95,6 +99,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.getElementById('dropdownButton').addEventListener('click', function() {
             document.getElementById('dropdownMenu').classList.toggle('hidden');

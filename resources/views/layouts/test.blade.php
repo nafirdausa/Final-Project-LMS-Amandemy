@@ -19,6 +19,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Soft UI Dashboard Tailwind</title>
     @include('partials.link')
     <style>
@@ -38,7 +40,7 @@
         @include('partials.header')
         @yield('content')
     </main>
-    <div fixed-plugin>
+    {{-- <div fixed-plugin>
       <a fixed-plugin-button class="bottom-7.5 right-7.5 text-xl z-990 shadow-soft-lg rounded-circle fixed cursor-pointer bg-white px-4 py-2 text-slate-700">
         <i class="py-2 pointer-events-none fa fa-cog"> </i>
       </a>
@@ -100,7 +102,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
   </body>
 @include('partials.script')
 </html>
