@@ -47,7 +47,7 @@
                         </td>
                         <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                             <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400"> Read </a> |
-                            <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400"> Edit </a> |
+                            <a href="{{route('dashboard.guru.edit_ujian_siswa')}}" class="text-xs font-semibold leading-tight text-slate-400"> Edit </a> |
                             <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400">  Delete </a>
                         </td>
                     </tr>

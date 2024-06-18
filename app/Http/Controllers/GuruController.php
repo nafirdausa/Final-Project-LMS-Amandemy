@@ -73,4 +73,10 @@ class GuruController extends Controller
     public function uasSiswa(){
         return view('user_guru.uas_siswa');
     }
+    public function editTugasSiswa(){
+        return view('user_guru.form_edit_tugas');
+    }
+    public function editUjianSiswa(){
+        return view('user_guru.form_edit_ujian');
+    }
 }
