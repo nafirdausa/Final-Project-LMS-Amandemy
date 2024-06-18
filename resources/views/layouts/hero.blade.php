@@ -22,8 +22,8 @@
         <h1 class="block antialiased tracking-normal font-sans font-bold leading-[1.3] text-white mb-4 text-3xl lg:text-4xl" style="font-size: 50px">Selamat datang di ruang belajar kesayangan anda</h1>
         <p class="block antialiased font-sans text-xl font-normal leading-relaxed text-white mb-9 opacity-70">Kami siap membantu kamu dalam proses belajar dengan menyediakan <br> metode yang efektif dan efisien, sehingga kamu dapat menguasai <br> materi dengan lebih mudah dan cepat,  serta mencapai hasil <br> yang optimal dalam waktu yang lebih singkat!</p>
         <div style="margin-top:80px">
-            <button class="btn">
-                <a href="{{ route('login') }}" class="bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 hover:text-white">Mulai Belajar</a>
+            <button>
+                <a href="{{ route('login') }}" class="bg-blue-600 text-white font-bold py-3 px-4 rounded-full hover:bg-blue-600 hover:text-white">Mulai Belajar</a>
             </button>
         </div>
       </div>
@@ -39,30 +39,30 @@
         
                 <div class="max-w-6xl mx-auto grid grid-rows-3 grid-flow-col gap-8 justify-center">
                     <div class="flex flex-col items-center md:flex-row md:col-span-1 mb-8 mt-5">
-                        <div class="w-full md:w-1.5/3 flex items-center justify-center">
+                        <div class="w-full md:w-1.5/3 flex items-center justify-center fade-up-element opacity-0">
                             <img src="{{ asset('assets/images/minat.jpg') }}" alt="Education Image 1" class="rounded-lg mb-4 md:mb-0 md:mr-4 w-full shadow-2xl" >
                         </div>
-                        <div class="w-full md:w-1.5/3">
+                        <div class="w-full md:w-1.5/3 fade-up-element opacity-0">
                             <h1 class="text-xl font-bold mb-4" style="font-size: 50px">Tentukan Minatmu</h1>
                             <p class="text-gray-600 ml-7" style="margin: 0px; font-size:20px">Disini kami berkomitmen untuk memberikan pendidikan terbaik bagi kalian. Mulai perjalanan belajarmu dengan menentukan minatmu sejak awal, baik itu di bidang Bahasa, IPA, atau IPS. Melalui platform pembelajaran yang disesuaikan, kamu akan mendapatkan pengalaman belajar yang efektif dan efisien untuk mempersiapkan masa depan yang gemilang.</p>
                         </div>
                     </div>
         
                     <div class="flex flex-col items-center justify-items-center justify-center md:flex-row md:col-span-1 mb-5 mt-5">
-                        <div class="w-full md:w-1.5/3">
+                        <div class="w-full md:w-1.5/3 fade-up-element opacity-0">
                             <h3 class="text-6xl font-bold mb-2" style="font-size: 50px">Berinovasi dan Menstimulasi Diskusi</h3>
                             <p class="text-gray-600 ml-7" style="margin: 0px; font-size:20px">Disini kamu didorong untuk berpikir kreatif dan kritis. Platform ini dirancang untuk memfasilitasi inovasi dan menstimulasi diskusi, memungkinkan kamu untuk berkolaborasi, bertukar ide, dan memecahkan masalah bersama.</p>
                         </div>
-                        <div class="w-full md:w-1.5/3 flex items-center justify-center">
+                        <div class="w-full md:w-1.5/3 flex items-center justify-center fade-up-element opacity-0">
                             <img src="{{ asset('assets/images/inovasi.jpg') }}" alt="Education Image 2" class="rounded-lg mb-4 md:mb-0 md:mr-4 md:ml-4 0 w-full shadow-2xl">
                         </div>
                     </div>
         
                     <div class="flex flex-col items-center md:flex-row md:col-span-1 mb-5 mt-5">
-                        <div class="w-full md:w-1.5/3 flex items-center justify-center">
+                        <div class="w-full md:w-1.5/3 flex items-center justify-center fade-up-element opacity-0">
                             <img src="{{ asset('assets/images/feedback.jpg') }}" alt="Education Image 3" class="rounded-lg mb-4 md:mb-0 md:mr-4 w-full shadow-2xl">
                         </div>
-                        <div class="w-full md:w-1.5/3 justify-items-end">
+                        <div class="w-full md:w-1.5/3 justify-items-end fade-up-element opacity-0">
                             <h3 class="text-6xl font-bold mb-2" style="font-size: 50px">Minta Bantuan dan Umpan Balik</h3>
                             <p class="text-gray-600 ml-7 " style="margin: 0px; font-size:20px">Kami memahami bahwa setiap siswa memiliki kebutuhan belajar yang unik. Disini, siswa dapat dengan mudah meminta bantuan dan mendapatkan umpan balik dari guru dan teman.</p>
                         </div>
