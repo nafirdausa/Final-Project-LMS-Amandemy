@@ -76,6 +76,27 @@
                         </div>
                     </div>
                 </div>
+                <div class="mb-3">
+                    <strong>Tugas</strong>
+                    <ul class="list-disc pl-5">
+                        @foreach($tugas as $tugas)
+                            <li>{{ $tugas->judul }} - Deadline: {{ $tugas->deadline }}</li>
+                            <!-- Tambahkan tombol untuk mengirimkan jawaban tugas -->
+                            <a href="{{ route('submit_jawaban', ['tugas_id' => $tugas->id]) }}" class="bg-blue-500 text-white px-4 py-2 rounded-md">Kirim Jawaban</a>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="mb-3">
+                    <strong>Ujian</strong>
+                    <ul class="list-disc pl-5">
+                        @foreach($ujian as $ujian)
+                            <li>{{ $ujian->judul }} - Deadline: {{ $ujian->deadline }}</li>
+                            <!-- Tambahkan tombol untuk mengirimkan jawaban ujian -->
+                            <a href="{{ route('submit_jawaban', ['ujian_id' => $ujian->id]) }}" class="bg-blue-500 text-white px-4 py-2 rounded-md">Kirim Jawaban</a>
+                        @endforeach
+                    </ul>
+                </div>
+
                 <div class="mt-3">
                     <strong>Materi 2</strong>
                     <div>
@@ -123,91 +144,6 @@
                         </div>
                     </div>
 
-                </div>
-
-                <div class="mt-3">
-                    <strong>Materi 3</strong>
-                    <div>
-                        <button class="font-bold text-left w-full"
-                            style="display: flex; justify-content: space-between;" data-toggle="collapse"
-                            data-target="#collapseMaterial3" aria-expanded="false" aria-controls="collapseMaterial3">
-                            Materi 3
-                            <span style="transition: transform 0.3s;">▼</span>
-                        </button>
-                    </div>
-                    <div id="collapseMaterial3" class="collapse">
-                        <div class="bg-white p-4 rounded-lg shadow-md">
-                            Konten Materi 3
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-3">
-                    <strong>Materi 4</strong>
-                    <div>
-                        <button class="font-bold text-left w-full"
-                            style="display: flex; justify-content: space-between;" data-toggle="collapse"
-                            data-target="#collapseMaterial4" aria-expanded="false" aria-controls="collapseMaterial4">
-                            Materi 4
-                            <span style="transition: transform 0.3s;">▼</span>
-                        </button>
-                    </div>
-                    <div id="collapseMaterial4" class="collapse">
-                        <div class="bg-white p-4 rounded-lg shadow-md">
-                            Konten Materi 4
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-3">
-                    <strong>Materi 5</strong>
-                    <div>
-                        <button class="font-bold text-left w-full"
-                            style="display: flex; justify-content: space-between;" data-toggle="collapse"
-                            data-target="#collapseMaterial5" aria-expanded="false" aria-controls="collapseMaterial5">
-                            Materi 5
-                            <span style="transition: transform 0.3s;">▼</span>
-                        </button>
-                    </div>
-                    <div id="collapseMaterial5" class="collapse">
-                        <div class="bg-white p-4 rounded-lg shadow-md">
-                            Konten Materi 5
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-3">
-                    <strong>Materi 6</strong>
-                    <div>
-                        <button class="font-bold text-left w-full"
-                            style="display: flex; justify-content: space-between;" data-toggle="collapse"
-                            data-target="#collapseMaterial6" aria-expanded="false" aria-controls="collapseMaterial6">
-                            Materi 6
-                            <span style="transition: transform 0.3s;">▼</span>
-                        </button>
-                    </div>
-                    <div id="collapseMaterial6" class="collapse">
-                        <div class="bg-white p-4 rounded-lg shadow-md">
-                            Konten Materi 6
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-3">
-                    <strong>Materi 7</strong>
-                    <div>
-                        <button class="font-bold text-left w-full"
-                            style="display: flex; justify-content: space-between;" data-toggle="collapse"
-                            data-target="#collapseMaterial7" aria-expanded="false" aria-controls="collapseMaterial7">
-                            Materi 7
-                            <span style="transition: transform 0.3s;">▼</span>
-                        </button>
-                    </div>
-                    <div id="collapseMaterial7" class="collapse">
-                        <div class="bg-white p-4 rounded-lg shadow-md">
-                            Konten Materi 7
-                        </div>
-                    </div>
                 </div>
 
             </div>
