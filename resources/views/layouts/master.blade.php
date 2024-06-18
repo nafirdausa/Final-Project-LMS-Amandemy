@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <!-- Tailwind CSS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="font-sans text-gray-800">
@@ -32,10 +35,10 @@
                     </div>
                 </div>
             @else
-                <a href="{{ route('user_siswa.home') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Home</a>
-                <a href="{{ route('dashboard.siswa.course') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Course</a>
-                <a href="{{ route('dashboard.siswa.report') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Report</a>
-                <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700 active:text-blue-700">Portofolio</a>
+                <a href="{{ route('user_siswa.home') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Home</a>
+                <a href="{{ route('dashboard.siswa.course') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Course</a>
+                <a href="{{ route('dashboard.siswa.report') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Report</a>
+                <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Portofolio</a>
                 <div>
                     <a href="{{ route('login') }}" class="mx-4 bg-blue-700 text-white text-md font-bold py-2 px-6 rounded">Login</a>
                 </div>
@@ -47,6 +50,7 @@
     </main>
     <footer class="text-white">
         <div class="bg-blue-900 p-8 flex flex-wrap justify-between">
+            <div data-aos="fade-down"></div>
             <div class="max-w-xs">
                 <div class="text-2xl font-bold mb-4">StudyRoom</div>
                 <p>E-LEARNING Fakultas Teknik & Teknologi Informasi Universitas Jenderal Achmad Yani, Yogyakarta. Jalan
@@ -78,6 +82,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.getElementById('dropdownButton').addEventListener('click', function() {
             document.getElementById('dropdownMenu').classList.toggle('hidden');
