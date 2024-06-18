@@ -4,21 +4,21 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Console\Commands\SendDailyAbsenceReminder;
+use App\Console\Commands\SendMonthlyPortfolioReminder;
 
 class Kernel extends ConsoleKernel
 {
-    /**
-     * Define the application's command schedule.
-     */
-    protected function schedule(Schedule $schedule): void
+    protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        // Jadwalkan pengingat absen harian dari Senin hingga Jumat pukul 07:00
+        $schedule->command('email:daily-absence-reminder')->weekdays()->at('07:00');
+
+        // Jadwalkan pengingat bulanan untuk mengupload portofolio setiap akhir bulan
+        $schedule->command('email:monthly-portfolio-reminder')->lastDayOfMonth('07:00');
     }
 
-    /**
-     * Register the commands for the application.
-     */
-    protected function commands(): void
+    protected function commands()
     {
         $this->load(__DIR__.'/Commands');
 

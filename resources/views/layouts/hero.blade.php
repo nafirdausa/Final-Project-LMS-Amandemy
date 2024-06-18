@@ -8,7 +8,9 @@
         <h1 class="text-6xl font-bold mb-5">Hai, Pencari Ilmu Sejati!</h1>
         <h2 class="text-6xl font-bold mb-8">Time To Grow Up 🙌</h2><br>
         <p class="text-xl mb-8">Kami siap membantu kamu dalam proses belajar <br> dengan menyediakan metode yang efektif dan efisien,<br> sehingga kamu dapat menguasai materi dengan lebih mudah dan cepat,<br> serta mencapai hasil yang optimal dalam waktu yang lebih singkat!</p>
-        <button class="bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 hover:text-white">Mulai Belajar</button>
+        <a href="{{ route('login') }}">
+            <button class="bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 hover:text-white">Mulai Belajar</button>
+        </a>
     </div>
     <div class="welcome-image">
         <img src="{{asset('assets/images/hero.jpg')}}" alt="gambar hero" width="550" height="550">

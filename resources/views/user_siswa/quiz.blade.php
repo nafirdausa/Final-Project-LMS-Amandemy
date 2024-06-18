@@ -42,7 +42,7 @@
             <input type="file" class="p-2 border border-gray-300 rounded-md" id="file">
         </div>
         <!-- Mengubah button menjadi inline style -->
-        <a href="quis-add.html" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md">ADD SUBMISSION</a>
+        <a href="{{ route('dashboard.siswa.quiz-add') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md">ADD SUBMISSION</a>
     </div>
 </div>
 @endsection
