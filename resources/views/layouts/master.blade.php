@@ -13,35 +13,52 @@
 </head>
 
 <body class="font-sans text-gray-800">
-    <header class="flex justify-between items-center py-4 px-8 md:py-4 bg-white text-blue-800 shadow-md sticky top-0 z-50">
-    {{-- <header class="flex justify-between items-center p-4 bg-white text-blue-900 shadow-md sticky top-0 z-50"> --}}
+    <header
+        class="flex justify-between items-center py-4 px-8 md:py-4 bg-white text-blue-800 shadow-md sticky top-0 z-50">
         <div class="text-2xl font-bold">
-            <img src="{{asset('assets/img/studyroom.jpg')}}" alt="logo" width="150" height="150">
+            <img src="{{ asset('assets/img/studyroom.jpg') }}" alt="logo" width="150" height="150">
         </div>
         <nav class="flex items-center text-white">
             @auth
-                <a href="{{ route('user_siswa.home') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Home</a>
-                <a href="{{ route('dashboard.siswa.course') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Course</a>
-                <a href="{{ route('dashboard.siswa.report') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Report</a>
-                <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700 active:text-blue-700">Portofolio</a>
-                <div class="profile ml-4">
-                    <button class="text-white font-semibold rounded inline-flex items-center" type="button" id="dropdownButton">
-                        <img src="{{asset('assets/images/default_profile.png')}}" alt="Profile Picture" class="w-10 h-10 rounded-full">
-                    </button>
-                    <div class="dropdown-menu absolute right-3 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden" id="dropdownMenu">
-                        <div class="py-1">
-                            <a href="{{ route('logout') }}" class="block px-4 py-1 text-sm text-gray-700 hover:bg-red-500">Logout</a>
-                        </div>
+            <a href="{{ route('user_siswa.home') }}"
+                class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Home</a>
+            <a href="{{ route('dashboard.siswa.course') }}"
+                class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Course</a>
+            <a href="{{ route('dashboard.siswa.report') }}"
+                class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Report</a>
+            <a href="{{ route('dashboard.siswa.portofolio') }}"
+                class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Portofolio</a>
+            <a href="{{ route('dashboard.siswa.forum') }}"
+                class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Forum</a>
+            <div class="profile ml-4">
+                <button class="text-white font-semibold rounded inline-flex items-center" type="button"
+                    id="dropdownButton">
+                    <img src="{{ asset('assets/images/default_profile.png') }}" alt="Profile Picture"
+                        class="w-10 h-10 rounded-full">
+                </button>
+                <div class="dropdown-menu absolute right-3 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden"
+                    id="dropdownMenu">
+                    <div class="py-1">
+                        <a href="{{ route('logout') }}"
+                            class="block px-4 py-1 text-sm text-gray-700 hover:bg-red-500">Logout</a>
                     </div>
                 </div>
+            </div>
             @else
-                <a href="{{ route('user_siswa.home') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Home</a>
-                <a href="{{ route('dashboard.siswa.course') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Course</a>
-                <a href="{{ route('dashboard.siswa.report') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Report</a>
-                <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Portofolio</a>
-                <div>
-                    <a href="{{ route('login') }}" class="mx-4 bg-blue-700 text-white text-md font-bold py-2 px-6 rounded">Login</a>
-                </div>
+            <a href="{{ route('user_siswa.home') }}"
+                class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Home</a>
+            <a href="{{ route('dashboard.siswa.course') }}"
+                class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Course</a>
+            <a href="{{ route('dashboard.siswa.report') }}"
+                class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Report</a>
+            <a href="{{ route('dashboard.siswa.portofolio') }}"
+                class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Portofolio</a>
+            <a href="{{ route('dashboard.siswa.forum') }}"
+                class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Forum</a>
+            <div>
+                <a href="{{ route('login') }}"
+                    class="mx-4 bg-blue-700 text-white text-md font-bold py-2 px-6 rounded">Login</a>
+            </div>
             @endauth
         </nav>
     </header>

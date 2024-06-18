@@ -47,11 +47,16 @@ Route::middleware(['auth', 'role:guru'])->group(function () {
     Route::post('/add-kelas', [GuruController::class, 'addKelas'])->name('dashboard.guru.add_kelas');
     Route::get('/add-raport',[GuruController::class, 'addRaport'])->name('dashboard.guru.add_raport');
     Route::get('/add-tugas',[GuruController::class, 'addTugas'])->name('dashboard.guru.add_tugas');
+    Route::post('/submit-tugas', [GuruController::class, 'submitTugas'])->name('submit_tugas');
+    Route::post('/submit-jawaban/{tugas_id}', [SiswaController::class, 'submitJawaban'])->name('submit_jawaban');
+    Route::get('/tugas/{tugas}/penilaian', [GuruController::class, 'showPenilaianForm'])->name('tugas.penilaian');
+    Route::post('/tugas/{tugas}/penilaian', [GuruController::class, 'penilaian'])->name('tugas.proses_penilaian');
     Route::get('/add-ujian',[GuruController::class, 'addUjian'])->name('dashboard.guru.add_ujian');
-    Route::get('/tugas-siswa',[GuruController::class, 'tugasSiswa'])->name('dashboard.guru.tugas_siswa');
-    Route::get('/uas-siswa',[GuruController::class, 'uasSiswa'])->name('dashboard.guru.uas_siswa');
-    Route::get('/edit-tugas-siswa',[GuruController::class, 'editTugasSiswa'])->name('dashboard.guru.edit_tugas_siswa');
-    Route::get('/edit-ujisn-siswa',[GuruController::class, 'editUjianSiswa'])->name('dashboard.guru.edit_ujian_siswa');
+    Route::post('/submit-ujian', [GuruController::class, 'submitUjian'])->name('submit_ujian');
+    Route::post('/jawaban-ujian/{ujian_id}', [SiswaController::class, 'jawabanUjian'])->name('jawaban_ujian');
+    Route::get('/ujian/{ujian}/penilaian', [GuruController::class, 'showPenilaianUjian'])->name('ujian.penilaian');
+    Route::post('/ujian/{ujian}/penilaian', [GuruController::class, 'penilaianUjian'])->name('ujian.proses_penilaian');
+
 });
 
 // Dashboard Siswa
