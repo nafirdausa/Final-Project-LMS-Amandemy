@@ -5,6 +5,8 @@ use App\Http\Controllers\HeroController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\DiscussionController;
+use App\Http\Controllers\ReplyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,17 +27,29 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.auth');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot.password');
 
+// Login with Google
+Route::get('login/google', [AuthController::class, 'loginGoogle'])->name('login_google');
+Route::get('login/google/callback', [AuthController::class, 'loginGoogleCallback'])->name('callback_google');
+
+// Login with Facebook
+Route::get('login/facebook', [AuthController::class, 'loginFacebook'])->name('login_facebook');
+Route::get('login/facebook/callback', [AuthController::class, 'loginFacebookCallback'])->name('callback_facebook');
+
+
 // Dashboard Guru
 Route::middleware(['auth', 'role:guru'])->group(function () {
     Route::get('/guru',[GuruController::class, 'guruDashboard'])->name('user_guru.home');
-    Route::get('/guru-mapel',[GuruController::class, 'mapel'])->name('dashboard.guru.mapel');
+    Route::get('/guru-kelas',[GuruController::class, 'kelas'])->name('dashboard.guru.kelas');
     Route::get('/guru-tugas',[GuruController::class, 'tugas'])->name('dashboard.guru.tugas');
     Route::get('/guru-ujian',[GuruController::class, 'ujian'])->name('dashboard.guru.ujian');
     Route::get('/guru-raport',[GuruController::class, 'raport'])->name('dashboard.guru.raport');
-    Route::get('/add-mapel',[GuruController::class, 'addMapel'])->name('dashboard.guru.add_mapel');
+    Route::get('/add-kelas',[GuruController::class, 'showFormKelas'])->name('dashboard.guru.form_kelas');
+    Route::post('/add-kelas', [GuruController::class, 'addKelas'])->name('dashboard.guru.add_kelas');
     Route::get('/add-raport',[GuruController::class, 'addRaport'])->name('dashboard.guru.add_raport');
     Route::get('/add-tugas',[GuruController::class, 'addTugas'])->name('dashboard.guru.add_tugas');
     Route::get('/add-ujian',[GuruController::class, 'addUjian'])->name('dashboard.guru.add_ujian');
+    Route::get('/tugas-siswa',[GuruController::class, 'tugasSiswa'])->name('dashboard.guru.tugas_siswa');
+    Route::get('/uas-siswa',[GuruController::class, 'uasSiswa'])->name('dashboard.guru.uas_siswa');
 });
 
 // Dashboard Siswa
@@ -52,4 +66,11 @@ Route::middleware(['auth', 'role:siswa'])->group(function () {
     Route::get('/add-quiz', [SiswaController::class, 'showAddQuizPage'])->name('dashboard.siswa.quiz-add');
 });
 
+//Forum Diskusi;
 
+Route::middleware(['auth', 'role:siswa'])->group(function () {
+Route::get('/forum', [DiscussionController::class, 'index'])->name('dashboard.siswa.forum');
+});
+
+Route::resource('discussions', DiscussionController::class);
+Route::post('discussions/{discussion}/replies', [ReplyController::class, 'store'])->name('replies.store');
