@@ -23,7 +23,7 @@
         <p class="block antialiased font-sans text-xl font-normal leading-relaxed text-white mb-9 opacity-70">Kami siap membantu kamu dalam proses belajar dengan menyediakan <br> metode yang efektif dan efisien, sehingga kamu dapat menguasai <br> materi dengan lebih mudah dan cepat,  serta mencapai hasil <br> yang optimal dalam waktu yang lebih singkat!</p>
         <div style="margin-top:80px">
             <button class="btn">
-                <a href="{{ route('login') }}" >Mulai Belajar</a>
+                <a href="{{ route('login') }}" class="bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 hover:text-white">Mulai Belajar</a>
             </button>
         </div>
       </div>

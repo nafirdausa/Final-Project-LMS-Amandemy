@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Kelas;
 use App\Models\Portofolio;
+use App\Models\JawabanTugas;
+use App\Models\jawabanUjian;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -89,5 +91,47 @@ class SiswaController extends Controller
     public function showAddQuizPage()
     {
         return view('user_siswa.quiz-add');
+    }
+
+    public function submitJawaban(Request $request, $tugas_id)
+    {
+        $request->validate([
+            'jawaban' => 'required|file|max:2048', // Maksimal 2MB
+        ]);
+
+        // Simpan file jawaban
+        $jawabanFile = $request->file('jawaban');
+        $fileName = time() . '_' . $jawabanFile->getClientOriginalName();
+        $jawabanFile->storeAs('public/jawaban', $fileName);
+
+        // Simpan data jawaban ke database
+        JawabanTugas::create([
+            'tugas_id' => $tugas_id,
+            'siswa_id' => Auth::user()->id, // Asumsi id siswa diambil dari user yang sedang login
+            'file_jawaban' => $fileName,
+        ]);
+
+        return redirect()->back()->with('success', 'Jawaban tugas berhasil dikirim');
+    }
+    
+    public function jawabanUjian(Request $request, $ujian_id)
+    {
+        $request->validate([
+            'jawaban' => 'required|file|max:2048', // Maksimal 2MB
+        ]);
+
+        // Simpan file jawaban
+        $jawabanFile = $request->file('jawaban');
+        $fileName = time() . '_' . $jawabanFile->getClientOriginalName();
+        $jawabanFile->storeAs('public/jawabanUjian', $fileName);
+
+        // Simpan data jawaban ke database
+        jawabanUjian::create([
+            'ujian_id' => $ujian_id,
+            'siswa_id' => Auth::user()->id, // Asumsi id siswa diambil dari user yang sedang login
+            'file_jawaban' => $fileName,
+        ]);
+
+        return redirect()->back()->with('success', 'Jawaban ujian berhasil dikirim');
     }
 }
