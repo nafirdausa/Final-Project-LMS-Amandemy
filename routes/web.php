@@ -5,6 +5,8 @@ use App\Http\Controllers\HeroController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\DiscussionController;
+use App\Http\Controllers\ReplyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,4 +54,11 @@ Route::middleware(['auth', 'role:siswa'])->group(function () {
     Route::get('/add-quiz', [SiswaController::class, 'showAddQuizPage'])->name('dashboard.siswa.quiz-add');
 });
 
+//Forum Diskusi;
 
+Route::middleware(['auth', 'role:siswa'])->group(function () {
+Route::get('/forum', [DiscussionController::class, 'index'])->name('dashboard.siswa.forum');
+});
+
+Route::resource('discussions', DiscussionController::class);
+Route::post('discussions/{discussion}/replies', [ReplyController::class, 'store'])->name('replies.store');
