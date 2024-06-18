@@ -48,12 +48,10 @@ Route::middleware(['auth', 'role:guru'])->group(function () {
     Route::get('/add-raport',[GuruController::class, 'addRaport'])->name('dashboard.guru.add_raport');
     Route::get('/add-tugas',[GuruController::class, 'addTugas'])->name('dashboard.guru.add_tugas');
     Route::post('/submit-tugas', [GuruController::class, 'submitTugas'])->name('submit_tugas');
-    Route::post('/submit-jawaban/{tugas_id}', [SiswaController::class, 'submitJawaban'])->name('submit_jawaban');
     Route::get('/tugas/{tugas}/penilaian', [GuruController::class, 'showPenilaianForm'])->name('tugas.penilaian');
     Route::post('/tugas/{tugas}/penilaian', [GuruController::class, 'penilaian'])->name('tugas.proses_penilaian');
     Route::get('/add-ujian',[GuruController::class, 'addUjian'])->name('dashboard.guru.add_ujian');
     Route::post('/submit-ujian', [GuruController::class, 'submitUjian'])->name('submit_ujian');
-    Route::post('/jawaban-ujian/{ujian_id}', [SiswaController::class, 'jawabanUjian'])->name('jawaban_ujian');
     Route::get('/ujian/{ujian}/penilaian', [GuruController::class, 'showPenilaianUjian'])->name('ujian.penilaian');
     Route::post('/ujian/{ujian}/penilaian', [GuruController::class, 'penilaianUjian'])->name('ujian.proses_penilaian');
 });
@@ -70,6 +68,10 @@ Route::middleware(['auth', 'role:siswa'])->group(function () {
     Route::post('/portofolio/upload', [SiswaController::class, 'uploadPortofolio'])->name('dashboard.siswa.uploadPortofolio');
     Route::get('/quiz', [SiswaController::class, 'showQuizPage'])->name('dashboard.siswa.quiz');
     Route::get('/add-quiz', [SiswaController::class, 'showAddQuizPage'])->name('dashboard.siswa.quiz-add');
+    Route::get('/ujian', [SiswaController::class, 'showUjianPage'])->name('dashboard.siswa.ujian');
+    Route::get('/ujian-quiz', [SiswaController::class, 'showAddUjianPage'])->name('dashboard.siswa.ujian-add');
+    Route::post('/submit-jawaban/tugas/{tugas_id}', [SiswaController::class, 'submitJawabanTugas'])->name('submit_jawaban_tugas');
+    Route::post('/submit-jawaban/ujian/{ujian_id}', [SiswaController::class, 'submitJawabanUjian'])->name('submit_jawaban_ujian');
 });
 
 //Forum Diskusi;

@@ -1,10 +1,10 @@
 @extends('layouts.master')
-@section('title', 'Task/Quiz')
+@section('title', 'Ujian')
 
 @section('content')
 <div class="container mx-auto my-5 px-4">
     <div class="task-header bg-gray-100 rounded-md p-4">
-        <h5>Task/Quiz</h5>
+        <h5>Ujian</h5>
         <p>Manajemen Sosial (SC523) - IPS > Tugas Diskusi</p>
     </div>
     <div class="task-content mt-4 bg-white border rounded-md p-4">
@@ -37,17 +37,17 @@
     </div>
     <div class="task-submit mt-4">
         @php
-            $lastTugasId = null; // Variable untuk menyimpan id tugas terakhir
+            $lastUjianId = null; // Variable untuk menyimpan id ujian terakhir
         @endphp
 
-        @foreach($tugas as $tugasItem)
+        @foreach($ujian as $ujianItem)
             @php
-                $lastTugasId = $tugasItem->id; // Simpan id tugas terakhir yang diulang
+                $lastUjianId = $ujianItem->id; // Simpan id ujian terakhir yang diulang
             @endphp
         @endforeach
 
-        @if (!is_null($lastTugasId))
-            <form action="{{ route('submit_jawaban_tugas', ['tugas_id' => $lastTugasId]) }}" method="POST" enctype="multipart/form-data">
+        @if (!is_null($lastUjianId))
+            <form action="{{ route('submit_jawaban_ujian', ['ujian_id' => $lastUjianId]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4">
                     <label for="file" class="block mb-2">File Submission</label>
