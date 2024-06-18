@@ -21,34 +21,34 @@ class SiswaController extends Controller
     {
         return view('user_siswa.home');
     }
-    
-    public function showCourcePage() 
+
+    public function showCourcePage()
     {
         return view('user_siswa.course');
     }
-    
-    public function showDetailCourcePage() 
+
+    public function showDetailCourcePage()
     {
         return view('user_siswa.detail_course');
     }
-    
-    public function showForumPage() 
+
+    public function showForumPage()
     {
         return view('user_siswa.forum');
     }
-    
-    public function showReportPage() 
+
+    public function showReportPage()
     {
         return view('user_siswa.report');
     }
-    
-    public function showPortofolioPage() 
+
+    public function showPortofolioPage()
     {
         $portofolios = Portofolio::all();
         return view('user_siswa.portofolio', compact('portofolios'));
     }
-    
-    public function uploadPortofolio(Request $request) 
+
+    public function uploadPortofolio(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'gambar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
@@ -77,13 +77,13 @@ class SiswaController extends Controller
 
         return redirect()->route('dashboard.siswa.portofolio')->with('success', 'Potofolio upload successfully');
     }
-    
-    public function showQuizPage() 
+
+    public function showQuizPage()
     {
         return view('user_siswa.quiz');
     }
-    
-    public function showAddQuizPage() 
+
+    public function showAddQuizPage()
     {
         return view('user_siswa.quiz-add');
     }
