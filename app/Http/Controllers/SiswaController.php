@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Kelas;
+use App\Models\Tugas;
+use App\Models\Ujian;
 use App\Models\Portofolio;
 use App\Models\JawabanTugas;
 use App\Models\jawabanUjian;
@@ -34,7 +36,9 @@ class SiswaController extends Controller
 
     public function showDetailCourcePage()
     {
-        return view('user_siswa.detail_course');
+        $tugas = Tugas::all(); // Ambil semua data tugas
+        $ujian = Ujian::all(); // Ambil semua data ujian
+        return view('user_siswa.detail_course', compact('tugas', 'ujian'));
     }
 
     public function showForumPage()
@@ -85,15 +89,27 @@ class SiswaController extends Controller
 
     public function showQuizPage()
     {
-        return view('user_siswa.quiz');
+        $tugas = Tugas::all();
+        return view('user_siswa.quiz', compact('tugas'));
     }
 
     public function showAddQuizPage()
     {
         return view('user_siswa.quiz-add');
     }
+    
+    public function showUjianPage()
+    {
+        $ujian = Ujian::all(); // Ambil semua data ujian
+        return view('user_siswa.ujian', compact('ujian'));
+    }
 
-    public function submitJawaban(Request $request, $tugas_id)
+    public function showAddUjianPage()
+    {
+        return view('user_siswa.ujian-add');
+    }
+
+    public function submitJawabanTugas(Request $request, $tugas_id)
     {
         $request->validate([
             'jawaban' => 'required|file|max:2048', // Maksimal 2MB
@@ -111,10 +127,10 @@ class SiswaController extends Controller
             'file_jawaban' => $fileName,
         ]);
 
-        return redirect()->back()->with('success', 'Jawaban tugas berhasil dikirim');
+        return redirect()->route('dashboard.siswa.quiz-add')->with('success', 'Jawaban tugas berhasil dikirim');
     }
     
-    public function jawabanUjian(Request $request, $ujian_id)
+    public function submitJawabanUjian(Request $request, $ujian_id)
     {
         $request->validate([
             'jawaban' => 'required|file|max:2048', // Maksimal 2MB
@@ -126,12 +142,12 @@ class SiswaController extends Controller
         $jawabanFile->storeAs('public/jawabanUjian', $fileName);
 
         // Simpan data jawaban ke database
-        jawabanUjian::create([
+        JawabanUjian::create([
             'ujian_id' => $ujian_id,
             'siswa_id' => Auth::user()->id, // Asumsi id siswa diambil dari user yang sedang login
             'file_jawaban' => $fileName,
         ]);
 
-        return redirect()->back()->with('success', 'Jawaban ujian berhasil dikirim');
+        return redirect()->route('dashboard.siswa.ujian-add')->with('success', 'Jawaban ujian berhasil dikirim');
     }
 }
