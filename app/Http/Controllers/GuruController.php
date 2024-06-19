@@ -345,4 +345,10 @@ class GuruController extends Controller
     public function addRaport(){
         return view('user_guru.form_add_raport');
     }
+    public function editTugasSiswa(){
+        return view('user_guru.form_edit_tugas');
+    }
+    public function editUjianSiswa(){
+        return view('user_guru.form_edit_ujian');
+    }
 }

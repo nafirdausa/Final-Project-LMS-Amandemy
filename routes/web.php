@@ -72,6 +72,7 @@ Route::middleware(['auth', 'role:guru'])->group(function () {
     Route::delete('/ujian/{id}', [GuruController::class, 'deleteUjian'])->name('dashboard.guru.delete_ujian');
     Route::get('/ujian/{ujian}/penilaian', [GuruController::class, 'showPenilaianUjian'])->name('ujian.penilaian');
     Route::post('/ujian/{ujian}/penilaian', [GuruController::class, 'penilaianUjian'])->name('ujian.proses_penilaian');
+
 });
 
 // Dashboard Siswa
@@ -92,11 +93,11 @@ Route::middleware(['auth', 'role:siswa'])->group(function () {
     Route::post('/submit-jawaban/ujian/{ujian_id}', [SiswaController::class, 'submitJawabanUjian'])->name('submit_jawaban_ujian');
 });
 
-//Forum Diskusi;
-
+// Forum Diskusi
 Route::middleware(['auth', 'role:siswa'])->group(function () {
 Route::get('/forum', [DiscussionController::class, 'index'])->name('dashboard.siswa.forum');
-});
-
-Route::resource('discussions', DiscussionController::class);
+Route::resource('discussions', DiscussionController::class)->except(['show', 'edit', 'update']);
 Route::post('discussions/{discussion}/replies', [ReplyController::class, 'store'])->name('replies.store');
+Route::delete('discussions/{discussion}', [DiscussionController::class, 'destroy'])->name('discussions.destroy');
+Route::delete('replies/{reply}', [ReplyController::class, 'destroy'])->name('replies.destroy');
+});
