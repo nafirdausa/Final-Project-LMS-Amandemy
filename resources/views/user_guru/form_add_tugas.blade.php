@@ -41,7 +41,7 @@
                                 <div class="mt-4">
                                     <label for="time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select time</label>
                                     <div class="relative">
-                                        <input type="time" id="time" name="time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="09:00" max="18:00" value="00:00" required />
+                                        <input type="time" id="time" name="time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="00:00" required />
                                     </div>
                                 </div>
 
@@ -55,12 +55,12 @@
                                 <div class="mt-4">
                                     <label for="subject" class="block text-sm font-medium leading-6 text-black font-semibold">Mata Pelajaran</label>
                                     <div class="mt-2">
-                                    <select id="subject" name="subject" autocomplete="subject-name" class="block w-full rounded-lg border py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600  sm:text-sm sm:leading-6">
-                                        <option selected>Silahkan Pilih</option>
-                                        <option>Statistika</option>
-                                        <option>Kimia Dasar</option>
-                                        <option>Fisika Kuantum</option>
-                                    </select>
+                                        <select id="subject" name="subject" autocomplete="subject-name" class="block w-full rounded-lg border py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600  sm:text-sm sm:leading-6">
+                                            <option value="" disabled selected>Silahkan Pilih</option>
+                                            <option value="Statistika">Statistika</option>
+                                            <option value="Kimia Dasar">Kimia Dasar</option>
+                                            <option value="Fisika Kuantum">Fisika Kuantum</option>
+                                        </select>
                                     </div>
                                 </div>
                             

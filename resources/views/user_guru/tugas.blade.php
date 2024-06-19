@@ -21,34 +21,58 @@
             <div class="p-0 overflow-x-auto">
                 <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
                     <thead class="align-bottom">
-                    <tr>
-                        <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Nama</th>
-                        <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Deadline</th>
-                        <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">File</th>
-                        <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Mapel</th>
-                        <th class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-gray-200 border-solid shadow-none tracking-none whitespace-nowrap text-slate-400 opacity-70">Actions</th>
-                    </tr>
+                        <tr>
+                            <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
+                            <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Deskripsi</th>
+                            <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Deadline</th>
+                            <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">File</th>
+                            <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Subject</th>
+                            <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Nilai</th>
+                            <th class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-gray-200 border-solid shadow-none tracking-none whitespace-nowrap text-slate-400 opacity-70">Actions</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <h6 class="px-4 py-1 mb-0 text-sm leading-normal">Tugas Kalkulus</h6>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 text-xs font-semibold leading-tight">19/05/2024</p>
-                        </td>
-                        <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 text-xs font-semibold leading-tight">tugas1.pdf</p>
-                        </td>
-                        <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 text-xs font-semibold leading-tight">Kalkulus</p>
-                        </td>
-                        <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400"> Read </a> |
-                            <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400"> Edit </a> |
-                            <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400">  Delete </a>
-                        </td>
-                    </tr>
+                        @foreach($tugas as $t)
+                        <tr>
+                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                <h6 class="px-4 py-1 mb-0 text-sm leading-normal">{{ $t->judul }}</h6>
+                            </td>
+                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                <p class="mb-0 text-xs font-semibold leading-tight">{{ $t->deskripsi }}</p>
+                            </td>
+                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                <p class="mb-0 text-xs font-semibold leading-tight">{{ $t->deadline }}</p>
+                            </td>
+                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                <a href="{{ asset('storage/tugas/' . $t->file) }}" target="_blank"
+                                    class="mb-0 text-xs font-semibold leading-tight text-blue-500">{{ $t->file }}</a>
+                            </td>
+                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                <p class="mb-0 text-xs font-semibold leading-tight">{{ $t->subject }}</p>
+                            </td>
+                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                <p class="mb-0 text-xs font-semibold leading-tight">{{ $t->nilai }}</p>
+                            </td>
+                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                <a href="{{ route('dashboard.guru.show_tugas', $t->id) }}"
+                                    class="text-xs font-semibold leading-tight text-blue-500">Read</a> |
+                                <a href="{{ route('dashboard.guru.edit_tugas', $t->id) }}"
+                                    class="text-xs font-semibold leading-tight text-blue-500">Edit</a> |
+                                <form action="{{ route('dashboard.guru.delete_tugas', $t->id) }}" method="POST" class="inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-xs font-semibold leading-tight text-red-500">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                        @if($tugas->isEmpty())
+                        <tr>
+                            <td colspan="7" class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                <p class="mb-0 text-xs font-semibold leading-tight text-center">Tidak ada tugas.</p>
+                            </td>
+                        </tr>
+                        @endif
                     </tbody>
                 </table>
             </div>

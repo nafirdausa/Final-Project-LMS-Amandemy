@@ -16,6 +16,7 @@ class Tugas extends Model
         'deadline',
         'time',
         'file',
+        'subject',
         'nilai',
         'komentar',
     ];
