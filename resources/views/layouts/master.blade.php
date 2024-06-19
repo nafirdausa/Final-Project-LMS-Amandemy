@@ -70,7 +70,7 @@
             <div data-aos="fade-down"></div>
             <div class="max-w-xs">
                 <div class="text-2xl font-bold mb-4">StudyRoom</div>
-                <p>E-LEARNING Fakultas Teknik & Teknologi Informasi Universitas Jenderal Achmad Yani, Yogyakarta. Jalan
+                <p>E-LEARNING MA Negeri Madesu, Yogyakarta. Jalan
                     Ringroad Barat, Banyuraden, Gamping, Sleman, Yogyakarta</p>
             </div>
             <div class="mb-4 md:mt-0">
@@ -95,7 +95,7 @@
             </div>
         </div>
         <div class="text-center bg-blue-950 p-2">
-            <p>Fakultas Teknik & Teknologi Informasi, Universitas Jendral Achmad Yani Yogyakarta @ 2018 - 2023.</p>
+            <p>MA Negeri Madesu Yogyakarta @ 2018 - 2024.</p>
         </div>
     </footer>
 
