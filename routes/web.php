@@ -72,11 +72,11 @@ Route::middleware(['auth', 'role:siswa'])->group(function () {
     Route::get('/add-quiz', [SiswaController::class, 'showAddQuizPage'])->name('dashboard.siswa.quiz-add');
 });
 
-//Forum Diskusi;
-
+// Forum Diskusi
 Route::middleware(['auth', 'role:siswa'])->group(function () {
 Route::get('/forum', [DiscussionController::class, 'index'])->name('dashboard.siswa.forum');
-});
-
-Route::resource('discussions', DiscussionController::class);
+Route::resource('discussions', DiscussionController::class)->except(['show', 'edit', 'update']);
 Route::post('discussions/{discussion}/replies', [ReplyController::class, 'store'])->name('replies.store');
+Route::delete('discussions/{discussion}', [DiscussionController::class, 'destroy'])->name('discussions.destroy');
+Route::delete('replies/{reply}', [ReplyController::class, 'destroy'])->name('replies.destroy');
+});
