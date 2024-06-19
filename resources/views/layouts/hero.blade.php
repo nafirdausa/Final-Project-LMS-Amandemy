@@ -21,9 +21,12 @@
         <h1 class="block antialiased tracking-normal font-sans font-bold leading-[1.3] text-white mb-4 text-3xl lg:text-4xl" style="font-size: 40px">Hai, Pencari Ilmu Sejati! </h1>
         <h1 class="block antialiased tracking-normal font-sans font-bold leading-[1.3] text-white mb-4 text-3xl lg:text-4xl" style="font-size: 50px">Selamat datang di ruang belajar kesayangan anda</h1>
         <p class="block antialiased font-sans text-xl font-normal leading-relaxed text-white mb-9 opacity-70">Kami siap membantu kamu dalam proses belajar dengan menyediakan <br> metode yang efektif dan efisien, sehingga kamu dapat menguasai <br> materi dengan lebih mudah dan cepat,  serta mencapai hasil <br> yang optimal dalam waktu yang lebih singkat!</p>
-        <div style="margin-top:80px">
-            <button>
-                <a href="{{ route('login') }}" class="bg-blue-600 text-white font-bold py-3 px-4 rounded-full hover:bg-blue-600 hover:text-white">Mulai Belajar</a>
+        <div style="margin-top:80px" class="flex align-items justify-center">
+            <button class="btn-on">
+                <a href="{{ route('login') }}" class="">Mulai Belajar</a>
+                <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                  <path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fill-rule="evenodd"></path>
+                </svg>
             </button>
         </div>
       </div>

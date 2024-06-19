@@ -36,29 +36,30 @@
             animation: fadeUp 2s ease-out forwards;
         }   
 
-        .btn {
+        .btn-login {
              display: inline-block;
              border-radius: 4px;
              background-color: #19269b;
              border: none;
              color: #FFFFFF;
              text-align: center;
-             font-size: 17px;
-             padding: 10px;
+             font-size: 16  px;
+             font-weight: bold;
+             padding: 7px;
              width: 90px;
              transition: all 0.5s;
              cursor: pointer;
              margin: 5px;
         }
 
-        .btn a {
+        .btn-login a {
             cursor: pointer;
             display: inline-block;
             position: relative;
             transition: 0.5s;
         }
 
-        .btn a:after {
+        .btn-login a:after {
             content: '»';
             position: absolute;
             opacity: 0;
@@ -67,13 +68,82 @@
             transition: 0.5s;
         }
 
-        .btn:hover a {
+        .btn-login:hover a {
             padding-right: 15px;
         }
 
-        .btn:hover a:after {
+        .btn-login:hover a:after {
             opacity: 1;
             right: 0;
+        }
+
+        .btn-on {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            padding-block: 0.5rem;
+            padding-inline: 1.25rem;
+            background-color: rgb(0 107 179);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffff;
+            gap: 10px;
+            font-weight: bold;
+            border: 3px solid #ffffff4d;
+            outline: none;
+            overflow: hidden;
+            font-size: 20px;
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .btn-on:hover {
+            transform: scale(1.05);
+            border-color: #fff9;
+        }
+        
+        .btn-on:hover .icon {
+            transform: translate(4px);
+        }
+        
+        .btn-on:hover::before {
+            animation: shine 1.5s ease-out infinite;
+        }
+        
+        .btn-on::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100%;
+            background-image: linear-gradient(
+              120deg,
+              rgba(255, 255, 255, 0) 30%,
+              rgba(255, 255, 255, 0.8),
+              rgba(255, 255, 255, 0) 70%
+            );
+            top: 0;
+            left: -100px;
+            opacity: 0.6;
+        }
+
+        @keyframes shine {
+            0% {
+              left: -100px;
+            }
+          
+            60% {
+              left: 100%;
+            }
+          
+            to {
+              left: 100%;
+            }
         }
     </style>
 </head>
@@ -92,11 +162,11 @@
                 <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700 active:text-blue-700">Portofolio</a>
                 <div class="profile ml-4">
                     <button class="text-white font-semibold rounded inline-flex items-center" type="button" id="dropdownButton">
-                        <img src="{{asset('assets/images/default_profile.png')}}" alt="Profile Picture" class="w-10 h-10 rounded-full">
+                        <img src="{{asset('assets/images/user.png')}}" alt="Profile Picture" class="w-10 h-10 rounded-full">
                     </button>
-                    <div class="dropdown-menu absolute right-3 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden" id="dropdownMenu">
+                    <div class="dropdown-menu absolute right-3 rounded-md shadow-lg bg-red ring-1 ring-black ring-opacity-5 hidden" id="dropdownMenu">
                         <div class="py-1">
-                            <a href="{{ route('logout') }}" class="block px-4 py-1 text-sm text-gray-700 hover:bg-red-500">Logout</a>
+                            <a href="{{ route('logout') }}" class="block px-4 py-1 text-sm text-black fw-bold hover:bg-red-500" style="font-weight: bold">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -106,8 +176,8 @@
                 <a href="{{ route('dashboard.siswa.report') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Report</a>
                 <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Portofolio</a>
                 <div>
-                    <button class="btn">
-                        <a href="{{ route('login') }}" class="">Login</a>
+                    <button class="btn-login">
+                        <a href="{{ route('login') }}">Login</a>
                     </button>
                 </div>
             @endauth
