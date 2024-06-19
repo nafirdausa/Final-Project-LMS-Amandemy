@@ -126,9 +126,9 @@
                     Ringroad Barat, Banyuraden, Gamping, Sleman, Yogyakarta</p>
             </div>
             <div class="mb-4 md:mt-0">
-                <h3 class="text-xl mb-2">Pranala</h3>
+                <h3 class="text-xl mb-2">Instansi</h3>
                 <ul class="list-none space-y-2">
-                    <li><a href="#" class="text-white hover:underline">SMA N Madesu</a></li>
+                    <li><a href="#" class="text-white hover:underline">SMA N 2 Mandrehe</a></li>
                     <li><a href="#" class="text-white hover:underline">IPA</a></li>
                     <li><a href="#" class="text-white hover:underline">IPS</a></li>
                     <li><a href="#" class="text-white hover:underline">Bahasa</a></li>
@@ -150,7 +150,7 @@
                 </div>
             </div>
             <div class="mb-4 md:mt-0 max-w-xs">
-                <h3 class="text-xl mb-2">SMA Negeri Madesu</h3>
+                <h3 class="text-xl mb-2">SMA Negeri 2 Mandrehe</h3>
                 <p>Jl. Silangkar km 07 Ringroad Barat, Banyuraden, Gamping, Sleman, Yogyakarta</p>
                 <p>Phone: +62-251-025-540</p>
                 <p>Email: mnd@smadesu.id</p>
