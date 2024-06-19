@@ -56,7 +56,7 @@
               </g>
             </svg>
           </div>
-          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Course</span>
+          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Kelas</span>
         </a>
       </li>
       <li class="mt-0.5 w-full">
@@ -191,10 +191,14 @@
                                 <p class="mb-0 text-xs font-semibold leading-tight">{{ $class->nama_pengajar }}</p>
                             </td>
                             <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                              <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400"> Read </a> |
-                              <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400"> Edit </a> |
-                              <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400">  Delete </a>
-                            </td>
+                              <a href="{{ route('dashboard.guru.show_kelas', $class->id) }}" class="text-xs font-semibold leading-tight text-slate-400"> Read </a> |
+                              <a href="{{ route('dashboard.guru.edit_kelas', $class->id) }}" class="text-xs font-semibold leading-tight text-slate-400"> Edit </a> |
+                              <form action="{{ route('dashboard.guru.delete_kelas', $class->id) }}" method="POST" style="display:inline-block;">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button type="submit" class="text-xs font-semibold leading-tight text-slate-400 bg-transparent border-none">Delete</button>
+                              </form>
+                          </td>
                         </tr>
                       @endforeach
                     </tbody>

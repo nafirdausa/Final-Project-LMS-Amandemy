@@ -43,15 +43,33 @@ Route::middleware(['auth', 'role:guru'])->group(function () {
     Route::get('/guru-tugas',[GuruController::class, 'tugas'])->name('dashboard.guru.tugas');
     Route::get('/guru-ujian',[GuruController::class, 'ujian'])->name('dashboard.guru.ujian');
     Route::get('/guru-raport',[GuruController::class, 'raport'])->name('dashboard.guru.raport');
+    
+    // Routes for Kelas
     Route::get('/add-kelas',[GuruController::class, 'showFormKelas'])->name('dashboard.guru.form_kelas');
     Route::post('/add-kelas', [GuruController::class, 'addKelas'])->name('dashboard.guru.add_kelas');
+    Route::get('/guru/kelas/{id}', [GuruController::class, 'showKelas'])->name('dashboard.guru.show_kelas');
+    Route::get('/guru/kelas/{id}/edit', [GuruController::class, 'editKelas'])->name('dashboard.guru.edit_kelas');
+    Route::put('/guru/kelas/{id}', [GuruController::class, 'updateKelas'])->name('dashboard.guru.update_kelas');
+    Route::delete('/guru/kelas/{id}', [GuruController::class, 'deleteKelas'])->name('dashboard.guru.delete_kelas');
     Route::get('/add-raport',[GuruController::class, 'addRaport'])->name('dashboard.guru.add_raport');
+    
+    // Routes for Tugas
     Route::get('/add-tugas',[GuruController::class, 'addTugas'])->name('dashboard.guru.add_tugas');
     Route::post('/submit-tugas', [GuruController::class, 'submitTugas'])->name('submit_tugas');
+    Route::get('/tugas/{id}/read', [GuruController::class, 'showTugas'])->name('dashboard.guru.show_tugas');
+    Route::get('/tugas/{id}/edit', [GuruController::class, 'editTugas'])->name('dashboard.guru.edit_tugas');
+    Route::put('/tugas/{id}', [GuruController::class, 'updateTugas'])->name('dashboard.guru.update_tugas');
+    Route::delete('/tugas/{id}', [GuruController::class, 'deleteTugas'])->name('dashboard.guru.delete_tugas');
     Route::get('/tugas/{tugas}/penilaian', [GuruController::class, 'showPenilaianForm'])->name('tugas.penilaian');
     Route::post('/tugas/{tugas}/penilaian', [GuruController::class, 'penilaian'])->name('tugas.proses_penilaian');
+    
+    // Routes for Ujian
     Route::get('/add-ujian',[GuruController::class, 'addUjian'])->name('dashboard.guru.add_ujian');
     Route::post('/submit-ujian', [GuruController::class, 'submitUjian'])->name('submit_ujian');
+    Route::get('/ujian/{id}/read', [GuruController::class, 'showUjian'])->name('dashboard.guru.show_ujian');
+    Route::get('/ujian/{id}/edit', [GuruController::class, 'editUjian'])->name('dashboard.guru.edit_ujian');
+    Route::put('/ujian/{id}', [GuruController::class, 'updateUjian'])->name('dashboard.guru.update_ujian');
+    Route::delete('/ujian/{id}', [GuruController::class, 'deleteUjian'])->name('dashboard.guru.delete_ujian');
     Route::get('/ujian/{ujian}/penilaian', [GuruController::class, 'showPenilaianUjian'])->name('ujian.penilaian');
     Route::post('/ujian/{ujian}/penilaian', [GuruController::class, 'penilaianUjian'])->name('ujian.proses_penilaian');
 
