@@ -196,16 +196,16 @@
                     Ringroad Barat, Banyuraden, Gamping, Sleman, Yogyakarta</p>
             </div>
             <div class="mb-4 md:mt-0">
-                <h3 class="text-xl mb-2">Instansi</h3>
+                <h3 class="text-xl mb-2" style="font-weight: bold">INSTANSI</h3>
                 <ul class="list-none space-y-2">
-                    <li><a href="#" class="text-white hover:underline">SMA N 2 Mandrehe</a></li>
-                    <li><a href="#" class="text-white hover:underline">IPA</a></li>
-                    <li><a href="#" class="text-white hover:underline">IPS</a></li>
-                    <li><a href="#" class="text-white hover:underline">Bahasa</a></li>
+                    <li><a href="#" class="text-white hover:underline">SMA</a></li>
+                    <li><a href="#" class="text-white hover:underline">SMU</a></li>
+                    <li><a href="#" class="text-white hover:underline">SMK</a></li>
+                    <li><a href="#" class="text-white hover:underline">UNIVERSITAS</a></li>
                 </ul>
             </div>
             <div class="mb-4 md:mt-0">
-                <h3 class="text-xl mb-2 fw-bold">Ikuti Kami</h3>
+                <h3 class="text-xl mb-2" style="font-weight: bold">IKUTI KAMI</h3>
                 <div>
                     <button class="p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
                         <svg class="w-5 h-5 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
@@ -220,10 +220,10 @@
                 </div>
             </div>
             <div class="mb-4 md:mt-0 max-w-xs">
-                <h3 class="text-xl mb-2">SMA Negeri 2 Mandrehe</h3>
+                <h3 class="text-xl mb-2" style="font-weight: bold">KONTAK</h3>
                 <p>Jl. Silangkar km 07 Ringroad Barat, Banyuraden, Gamping, Sleman, Yogyakarta</p>
                 <p>Phone: +62-251-025-540</p>
-                <p>Email: mnd@smadesu.id</p>
+                <p>Email: studyroom@gmail.com</p>
             </div>
         </div>
         <div class="text-center bg-blue-950 p-2">
