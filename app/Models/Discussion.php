@@ -8,19 +8,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Discussion extends Model
 {
-use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes;
 
-protected $fillable = [
-'title', 'body', 'user_id'
-];
+    protected $fillable = [
+        'title', 'body', 'user_id'
+    ];
 
-public function user()
-{
-return $this->belongsTo(User::class);
-}
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
-public function replies()
-{
-return $this->hasMany(Reply::class);
-}
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
 }

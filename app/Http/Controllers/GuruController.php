@@ -12,6 +12,7 @@ use App\Models\Raport;
 use App\Models\Portofolio;
 use App\Models\TugasSiswa;
 use App\Models\UjianSiswa;
+use App\Models\Discussion;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

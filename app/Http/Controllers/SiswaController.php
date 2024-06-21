@@ -58,7 +58,8 @@ class SiswaController extends Controller
 
     public function showForumPage()
     {
-        return view('user_siswa.forum');
+        $discussions = Discussion::with('user', 'replies.user')->get();
+        return view('forum', compact('discussions'));
     }
 
     public function showReportPage()

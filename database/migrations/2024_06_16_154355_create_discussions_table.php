@@ -8,20 +8,20 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateDiscussionsTable extends Migration
 {
-public function up()
-{
-Schema::create('discussions', function (Blueprint $table) {
-$table->id();
-$table->string('title');
-$table->text('content');
-$table->foreignId('user_id')->constrained()->onDelete('cascade');
-$table->timestamps();
-$table->softDeletes(); 
-});
-}
+    public function up()
+    {
+        Schema::create('discussions', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('body'); // Ubah dari 'content' menjadi 'body'
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
+            $table->softDeletes(); 
+        });
+    }
 
-public function down()
-{
-Schema::dropIfExists('discussions');
-}
+    public function down()
+    {
+        Schema::dropIfExists('discussions');
+    }
 }
