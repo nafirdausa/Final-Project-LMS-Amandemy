@@ -14,16 +14,19 @@ return new class extends Migration
         Schema::create('ujians', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('guru_id');
+            $table->unsignedBigInteger('kelas_id');
             $table->string('judul');
             $table->text('deskripsi');
             $table->dateTime('deadline');
             $table->time('time');
             $table->text('file');
-            $table->integer('nilai');
-            $table->text('komentar');
+            $table->string('subject')->nullable();
+            $table->integer('nilai')->nullable();
+            $table->text('komentar')->nullable();
             $table->timestamps();
 
             $table->foreign('guru_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('kelas_id')->references('id')->on('kelas')->onDelete('cascade');
         });
     }
 

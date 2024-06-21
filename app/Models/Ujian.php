@@ -11,13 +11,16 @@ class Ujian extends Model
 
     protected $fillable = [
         'guru_id',
+        'kelas_id',
         'judul',
         'deskripsi',
         'deadline',
         'time',
         'file',
-        'subject',
-        'nilai',
-        'komentar',
     ];
+
+    public function ujianSiswa()
+    {
+        return $this->hasMany(UjianSiswa::class);
+    }
 }

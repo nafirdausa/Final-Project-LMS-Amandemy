@@ -73,7 +73,7 @@
                             <h3 class="text-xl font-bold text-xl font-bold mb-2">{{ $portofolio->judul }}</h3>
                             <p>{{ $portofolio->deskripsi }}</p>
                         </div>
-                        <div class="btn m-3">
+                        <div class="btn m-3 w-full">
                             <a href="{{ $portofolio->link_project }}" target="_blank" class="block p-2 text-center bg-blue-500 text-white rounded-lg">Lihat Portofolio</a>
                         </div>
                     </div>

@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Materi;
 use App\Models\Kelas;
 use App\Models\Tugas;
 use App\Models\Ujian;
+use App\Models\Raport;
 use App\Models\Portofolio;
-use App\Models\JawabanTugas;
-use App\Models\jawabanUjian;
+use App\Models\TugasSiswa;
+use App\Models\UjianSiswa;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,8 +26,15 @@ class SiswaController extends Controller
 
     public function siswaDashboard()
     {
+        $user = Auth::user();
         $clases = Kelas::all();
-        return view('user_siswa.home', compact('clases'));
+        $lastAccessedCourse = null;
+
+        if ($user->last_accessed_course_id) {
+            $lastAccessedCourse = Kelas::find($user->last_accessed_course_id);
+        }
+
+        return view('user_siswa.home', compact('clases', 'lastAccessedCourse'));
     }
 
     public function showCourcePage()
@@ -34,11 +43,17 @@ class SiswaController extends Controller
         return view('user_siswa.course', compact('clases'));
     }
 
-    public function showDetailCourcePage()
+    public function showDetailCourcePage($id)
     {
+        $user = Auth::user();
+        $user->last_accessed_course_id = $id;
+        $user->save();
+
+        $kelas = Kelas::all(); // Ambil semua data kelas
+        $materi = Materi::all(); // Ambil semua data materi
         $tugas = Tugas::all(); // Ambil semua data tugas
         $ujian = Ujian::all(); // Ambil semua data ujian
-        return view('user_siswa.detail_course', compact('tugas', 'ujian'));
+        return view('user_siswa.detail_course', compact('id', 'kelas', 'materi', 'tugas', 'ujian'));
     }
 
     public function showForumPage()
@@ -48,7 +63,9 @@ class SiswaController extends Controller
 
     public function showReportPage()
     {
-        return view('user_siswa.report');
+        $user = auth()->user();
+        $raports = Raport::where('user_id', $user->id)->with(['user', 'kelas', 'mapel'])->get();
+        return view('user_siswa.report', compact('raports'));
     }
 
     public function showPortofolioPage()
@@ -87,21 +104,26 @@ class SiswaController extends Controller
         return redirect()->route('dashboard.siswa.portofolio')->with('success', 'Potofolio upload successfully');
     }
 
-    public function showQuizPage()
+    public function showQuizPage($tugas_id)
     {
-        $tugas = Tugas::all();
-        return view('user_siswa.quiz', compact('tugas'));
+        $kelas = Kelas::all();
+        $tugas = Tugas::find($tugas_id); // Ambil detail tugas berdasarkan tugas_id
+
+        return view('user_siswa.quiz', compact('kelas', 'tugas'));
     }
 
     public function showAddQuizPage()
     {
-        return view('user_siswa.quiz-add');
+        $kelas = Kelas::all();
+        return view('user_siswa.quiz-add', compact('kelas'));
     }
     
-    public function showUjianPage()
+    public function showUjianPage($ujian_id)
     {
-        $ujian = Ujian::all(); // Ambil semua data ujian
-        return view('user_siswa.ujian', compact('ujian'));
+        $kelas = Kelas::all();
+        $ujian = Ujian::find($ujian_id); // Ambil detail ujian berdasarkan ujian_id
+
+        return view('user_siswa.quiz', compact('kelas', 'ujian'));
     }
 
     public function showAddUjianPage()
@@ -109,43 +131,43 @@ class SiswaController extends Controller
         return view('user_siswa.ujian-add');
     }
 
-    public function submitJawabanTugas(Request $request, $tugas_id)
+    public function submitTugasSiswa(Request $request, $tugasId)
     {
         $request->validate([
-            'jawaban' => 'required|file|max:2048', // Maksimal 2MB
+            'file' => 'required|file|max:2048'
         ]);
 
         // Simpan file jawaban
-        $jawabanFile = $request->file('jawaban');
+        $jawabanFile = $request->file('file');
         $fileName = time() . '_' . $jawabanFile->getClientOriginalName();
-        $jawabanFile->storeAs('public/jawaban', $fileName);
+        $jawabanFile->storeAs('public/tugas_siswa_files', $fileName);
 
         // Simpan data jawaban ke database
-        JawabanTugas::create([
-            'tugas_id' => $tugas_id,
-            'siswa_id' => Auth::user()->id, // Asumsi id siswa diambil dari user yang sedang login
-            'file_jawaban' => $fileName,
+        TugasSiswa::create([
+            'tugas_id' => $tugasId,
+            'siswa_id' => Auth::id(),
+            'file' => $fileName
         ]);
 
         return redirect()->route('dashboard.siswa.quiz-add')->with('success', 'Jawaban tugas berhasil dikirim');
     }
     
-    public function submitJawabanUjian(Request $request, $ujian_id)
+    public function submitUjianSiswa(Request $request, $ujianId)
     {
         $request->validate([
-            'jawaban' => 'required|file|max:2048', // Maksimal 2MB
+            'file' => 'required|file|max:2048', // Maksimal 2MB
         ]);
 
         // Simpan file jawaban
-        $jawabanFile = $request->file('jawaban');
+        $jawabanFile = $request->file('file');
         $fileName = time() . '_' . $jawabanFile->getClientOriginalName();
-        $jawabanFile->storeAs('public/jawabanUjian', $fileName);
+        $jawabanFile->storeAs('public/ujian_siswa_files', $fileName);
 
         // Simpan data jawaban ke database
-        JawabanUjian::create([
-            'ujian_id' => $ujian_id,
+        UjianSiswa::create([
+            'ujian_id' => $ujianId,
             'siswa_id' => Auth::user()->id, // Asumsi id siswa diambil dari user yang sedang login
-            'file_jawaban' => $fileName,
+            'file' => $fileName,
         ]);
 
         return redirect()->route('dashboard.siswa.ujian-add')->with('success', 'Jawaban ujian berhasil dikirim');

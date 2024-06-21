@@ -7,37 +7,19 @@
     <div class="container mx-auto p-6">
         <h2 class="text-2xl mb-4">My Course</h2>
         <div class="bg-white rounded-lg shadow-md">
-            <div class="p-4">
-                <h4 class="text-xl mb-3">Manajemen Sosial (SC523) - IPS</h4>
+            @foreach ($kelas as $k)
+                
+            @endforeach
+                <h4 class="text-xl mb-3">{{ $k->nama_kelas }} - {{ $k->nama_mapel }}</h4>
                 <div class="mb-3">
                     <strong>Informasi</strong>
                     <ul class="list-disc pl-5">
-                        <li>Nama mata kuliah: Manajemen Sosial</li>
-                        <li>Kelas: IPS, Semester Genap, Tahun Akademik 2023/2024</li>
-                        <li>Dosen pengampu: Mei Mei, S.Pd., M.Sc.</li>
-                        <li>Grup WhatsApp</li>
-                        <li>Silakan bergabung dengan grup WhatsApp Mata Kuliah melalui tautan berikut: -</li>
+                        <li>Nama mata kuliah: {{ $k->nama_mapel }}</li>
+                        <li>Kelas: {{ $k->nama_kelas }}</li>
+                        <li>Tahun Akademik: {{ $k->tahun_ajaran }}</li>
+                        <li>Pengajar: {{ $k->nama_pengajar }}</li>
                     </ul>
                 </div>
-
-                <div id="accordion">
-                    <div class="bg-white rounded-lg shadow-md mb-2">
-                        <div class="bg-gray-100 p-4" id="headingOne">
-                            <h5 class="mb-0">
-                                <button class="font-bold text-left w-full"
-                                    style="display: flex; justify-content: space-between;" data-toggle="collapse"
-                                    data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    RPS Manajemen Sosial
-                                    <span style="transition: transform 0.3s;">▼</span>
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                            <div class="p-4">
-                                Konten RPS Manajemen Sosial
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="bg-white rounded-lg shadow-md mb-2">
                         <div class="bg-gray-100 p-4" id="headingTwo">
@@ -52,68 +34,50 @@
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="p-4">
-                                <a href="{{ route('dashboard.siswa.quiz') }}" class="font-bold">Tugas Diskusi</a>
+                                <a href="{{ route('dashboard.siswa.forum') }}" class="font-bold">Ajukan pertanyaan Anda dalam forum</a>
                             </div>
                         </div>
                     </div>
-                </div>
+                
 
             </div>
 
             <div class="mx-4">
-                <div class="mt-3">
-                    <strong>Materi 1</strong>
-                    <div>
-                        <button class="font-bold text-left w-full"
-                            style="display: flex; justify-content: space-between;" data-toggle="collapse"
-                            data-target="#collapseMaterial1" aria-expanded="false" aria-controls="collapseMaterial1">
-                            Pendahuluan Dasar
-                            <span style="transition: transform 0.3s;">▼</span>
-                        </button>
-                    </div>
-                    <div id="collapseMaterial1" class="collapse">
-                        <div class="bg-white p-4 rounded-lg shadow-md">
-                            Konten Pendahuluan Dasar
-                        </div>
-                    </div>
+                <div class="mb-3">
+                    <strong>Materi</strong>
+                    <ul class="list-disc pl-5">
+                        @foreach($materi as $materiItem)
+                            <div>
+                                @foreach ($kelas as $k)
+                                    <li>{{ $materiItem->judul }} - {{ $k->nama_mapel }}</li>
+                                @endforeach
+                                <p>{{ $materiItem->deskripsi }}</p>
+                                <a href="{{ asset('storage/materi/'.$materiItem->file) }}" target="_blank" class="text-blue-600">{{ $materiItem->file }}</a>
+                            </div>
+                        @endforeach
+                    </ul>
                 </div>
 
                 <div class="mb-3">
                     <strong>Tugas</strong>
                     <ul class="list-disc pl-5">
                         @foreach($tugas as $tugasItem)
-                            <a href="{{ route('dashboard.siswa.quiz') }}">
+                            <a href="{{ route('dashboard.siswa.quiz', ['tugas_id' => $tugasItem->id]) }}">
                                 <li>{{ $tugasItem->judul }} - Deadline: {{ $tugasItem->deadline }}</li>
                             </a>
                         @endforeach
                     </ul>
                 </div>
+
                 <div class="mb-3">
                     <strong>Ujian</strong>
                     <ul class="list-disc pl-5">
                         @foreach($ujian as $ujianItem)
-                            <a href="{{ route('dashboard.siswa.ujian') }}">
+                            <a href="{{ route('dashboard.siswa.ujian', ['ujian_id' => $ujianItem->id]) }}">
                                 <li>{{ $ujianItem->judul }} - Deadline: {{ $ujianItem->deadline }}</li>
                             </a>
                         @endforeach
                     </ul>
-                </div>
-
-                <div class="mt-3">
-                    <strong>Materi 2</strong>
-                    <div>
-                        <button class="font-bold text-left w-full"
-                            style="display: flex; justify-content: space-between;" data-toggle="collapse"
-                            data-target="#collapseMaterial2" aria-expanded="false" aria-controls="collapseMaterial2">
-                            Pemanasan Materi
-                            <span style="transition: transform 0.3s;">▼</span>
-                        </button>
-                    </div>
-                    <div id="collapseMaterial2" class="collapse">
-                        <div class="bg-white p-4 rounded-lg shadow-md">
-                            Konten Pemanasan Materi
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

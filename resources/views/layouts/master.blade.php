@@ -82,7 +82,9 @@
     <header
         class="flex justify-between items-center py-4 px-8 md:py-4 bg-white text-blue-800 shadow-md sticky top-0 z-50">
         <div class="text-2xl font-bold">
-            <img src="{{asset('assets/img/barunew.png')}}" alt="logo" width="200" height="200">
+            <a href="{{ route('hero') }}">
+                <img src="{{asset('assets/img/barunew.png')}}" alt="logo" width="200" height="200">
+            </a>
         </div>
         <nav class="flex items-center text-white">
             @auth
@@ -90,6 +92,7 @@
                 <a href="{{ route('dashboard.siswa.course') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Course</a>
                 <a href="{{ route('dashboard.siswa.report') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Report</a>
                 <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700 active:text-blue-700">Portofolio</a>
+                <a href="{{ route('dashboard.siswa.forum') }}" class="ms-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Forum</a>
                 <div class="profile ml-4">
                     <button class="text-white font-semibold rounded inline-flex items-center" type="button" id="dropdownButton">
                         <img src="{{asset('assets/images/default_profile.png')}}" alt="Profile Picture" class="w-10 h-10 rounded-full">
@@ -105,6 +108,7 @@
                 <a href="{{ route('dashboard.siswa.course') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Course</a>
                 <a href="{{ route('dashboard.siswa.report') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Report</a>
                 <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Portofolio</a>
+                <a href="{{ route('dashboard.siswa.forum') }}" class="ms-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Portofolio</a>
                 <div>
                     <button class="btn">
                         <a href="{{ route('login') }}" class="">Login</a>

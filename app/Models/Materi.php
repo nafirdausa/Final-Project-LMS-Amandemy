@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tugas extends Model
+class Materi extends Model
 {
     use HasFactory;
 
@@ -14,13 +14,6 @@ class Tugas extends Model
         'kelas_id',
         'judul',
         'deskripsi',
-        'deadline',
-        'time',
-        'file',
+        'file'
     ];
-
-    public function tugasSiswa()
-    {
-        return $this->hasMany(TugasSiswa::class);
-    }
 }

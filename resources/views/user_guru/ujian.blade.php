@@ -1,10 +1,11 @@
 @extends('layouts.test')
+
 <!-- sidenav  -->
 <aside class="max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent">
   <div class="h-19.5">
     <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden" sidenav-close></i>
-    <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="javascript:;" target="_blank">
-      <img src="{{asset('assets/img/studyroom.png')}}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" width="200" width="200"/>
+    <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="{{ route('hero') }}">
+      <img src="{{asset('assets/img/barunew1.png')}}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" width="200" width="200"/>
     </a>
   </div>
 
@@ -60,6 +61,27 @@
       </li>
 
       <li class="mt-0.5 w-full">
+        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="{{route('dashboard.guru.materi')}}">
+          <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current stroke-0 text-center xl:p-2.5">
+            <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>credit-card</title>
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                  <g transform="translate(1716.000000, 291.000000)">
+                    <g transform="translate(453.000000, 454.000000)">
+                      <path class="fill-slate-800 opacity-60" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"></path>
+                      <path class="fill-slate-800" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Materi</span>
+        </a>
+      </li>
+
+      <li class="mt-0.5 w-full">
         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="{{route('dashboard.guru.tugas')}}">
           <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current stroke-0 text-center xl:p-2.5">
             <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -101,6 +123,7 @@
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Ujian</span>
         </a>
       </li>
+
       <li class="mt-0.5 w-full">
         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="{{route('dashboard.guru.raport')}}">
           <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
@@ -124,7 +147,7 @@
       </li>
 
       <li class="mt-0.5 w-full">
-        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="./pages/sign-in.html">
+        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="{{route('logout')}}">
           <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
             <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <title>document</title>
@@ -153,6 +176,13 @@
         <div class="flex-none w-8/2 max-w-full px-3 text-right">
             <a class="inline-block px-6 py-3 font-bold text-center text-white uppercase align-middle transition-all bg-transparent rounded-lg cursor-pointer leading-pro text-xs ease-soft-in shadow-soft-md bg-150 bg-gradient-to-tl from-gray-900 to-slate-800 hover:shadow-soft-xs active:opacity-85 hover:scale-102 tracking-tight-soft bg-x-25" href="{{route('dashboard.guru.add_ujian')}}"> 
                 <i class="fas fa-plus"> </i>&nbsp;&nbsp;Tambah Ujian
+            </a>
+        </div>
+    </button>
+    <button>
+        <div class="flex-none w-8/2 max-w-full px-3 text-right">
+            <a class="inline-block px-6 py-3 font-bold text-center text-white uppercase align-middle transition-all bg-transparent rounded-lg cursor-pointer leading-pro text-xs ease-soft-in shadow-soft-md bg-150 bg-gradient-to-tl from-gray-900 to-slate-800 hover:shadow-soft-xs active:opacity-85 hover:scale-102 tracking-tight-soft bg-x-25" href="{{route('ujian.penilaian')}}"> 
+                <i class="fas fa-plus"> </i>&nbsp;&nbsp;Nilai Ujian
             </a>
         </div>
     </button>
@@ -191,12 +221,11 @@
                                         <a href="{{ asset('storage/tugas/' . $ujian->file) }}" target="_blank"
                                             class="mb-0 text-xs font-semibold leading-tight text-blue-500">{{ $ujian->file }}</a>
                                     </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        <p class="mb-0 text-xs font-semibold leading-tight">{{ $ujian->subject }}</p>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        <p class="mb-0 text-xs font-semibold leading-tight">{{ $ujian->nilai }}</p>
-                                    </td>
+                                    @foreach ($kelas as $k)  
+                                      <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                          <p class="mb-0 text-xs font-semibold leading-tight">{{ $k->nama_mapel }}</p>
+                                      </td>
+                                    @endforeach
                                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                         <a href="{{ route('dashboard.guru.show_ujian', $ujian->id) }}"
                                             class="text-xs font-semibold leading-tight text-blue-500">Read</a> |

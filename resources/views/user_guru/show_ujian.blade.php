@@ -50,16 +50,11 @@
                         
                             <div class="mt-4">
                                 <label for="subject" class="block text-sm font-medium leading-6 text-black font-semibold">Mata Pelajaran</label>
-                                <div class="mt-2">
-                                    <p class="text-gray-700">{{ $ujian->subject }}</p>
-                                </div>
-                            </div>
-                        
-                            <div class="mt-4">
-                                <label for="nilai" class="block text-sm font-medium leading-6 text-black font-semibold">Nilai</label>
-                                <div class="mt-2">
-                                    <p class="text-gray-700">{{ $ujian->nilai }}</p>
-                                </div>
+                                @foreach ($kelas as $k)
+                                    <div class="mt-2">
+                                        <p class="text-gray-700">{{ $k->nama_mapel }}</p>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

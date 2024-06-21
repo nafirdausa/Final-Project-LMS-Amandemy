@@ -4,8 +4,8 @@
 <aside class="max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent">
   <div class="h-19.5">
     <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden" sidenav-close></i>
-    <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="javascript:;" target="_blank">
-      <img src="{{asset('assets/img/studyroom.png')}}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" width="200" width="200"/>
+    <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="{{ route('hero') }}">
+      <img src="{{asset('assets/img/barunew1.png')}}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" width="200" width="200"/>
     </a>
   </div>
 
@@ -39,6 +39,7 @@
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dashboard</span>
         </a>
       </li>
+
       <li class="mt-0.5 w-full">
         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="{{route('dashboard.guru.kelas')}}">
           <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
@@ -57,6 +58,27 @@
             </svg>
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Kelas</span>
+        </a>
+      </li>
+
+      <li class="mt-0.5 w-full">
+        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="{{route('dashboard.guru.materi')}}">
+          <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current stroke-0 text-center xl:p-2.5">
+            <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>credit-card</title>
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                  <g transform="translate(1716.000000, 291.000000)">
+                    <g transform="translate(453.000000, 454.000000)">
+                      <path class="fill-slate-800 opacity-60" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"></path>
+                      <path class="fill-slate-800" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Materi</span>
         </a>
       </li>
 
@@ -80,6 +102,7 @@
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Tugas</span>
         </a>
       </li>
+
       <li class="mt-0.5 w-full">
         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="{{route('dashboard.guru.ujian')}}">
           <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
@@ -101,6 +124,7 @@
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Ujian</span>
         </a>
       </li>
+      
       <li class="mt-0.5 w-full">
         <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors" href="{{route('dashboard.guru.raport')}}">
           <div class="bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
@@ -122,8 +146,9 @@
           <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">Raport</span>
         </a>
       </li>
+
       <li class="mt-0.5 w-full">
-        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="./pages/sign-in.html">
+        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="{{route('logout')}}">
           <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
             <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <title>logout</title>
@@ -167,26 +192,44 @@
                         <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Nama Siswa</th>
                         <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Kelas</th>
                         <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun Akademik</th>
+                        <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Mata Pelajaran</th>
+                        <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Nilai</th>
                         <th class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-gray-200 border-solid shadow-none tracking-none whitespace-nowrap text-slate-400 opacity-70">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <h6 class="px-4 py-1 mb-0 text-sm leading-normal">Xixixi</h6>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 text-xs font-semibold leading-tight">10 IPA</p>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 text-xs font-semibold leading-tight">2021</p>
-                        </td>
-                        <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400"> Read </a> |
-                            <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400"> Edit </a> |
-                            <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400">  Delete </a>
-                        </td>
-                    </tr>
+                      @foreach($raports as $raport)
+                        <tr>
+                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                <div class="flex px-2 py-1">
+                                    <div class="flex flex-col justify-center">
+                                        <h6 class="mb-0 leading-normal text-sm">{{$raport->user->username}}</h6>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                <p class="mb-0 font-semibold leading-tight text-xs">{{$raport->kelas->nama_kelas}}</p>
+                            </td>
+                            <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
+                                <span class="font-semibold leading-tight text-xs text-slate-400">{{$raport->tahun_ajaran}}</span>
+                            </td>
+                            <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
+                                <span class="font-semibold leading-tight text-xs text-slate-400">{{$raport->kelas->nama_mapel}}</span>
+                            </td>
+                            <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
+                                <span class="font-semibold leading-tight text-xs text-slate-400">{{$raport->nilai}}</span>
+                            </td>
+                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                              <a href="{{ route('dashboard.guru.show_raport', $raport->id) }}" class="text-xs font-semibold leading-tight text-blue-500">Read</a> |
+                              <a href="{{ route('dashboard.guru.edit_raport', $raport->id) }}" class="text-xs font-semibold leading-tight text-blue-500">Edit</a> |
+                              <form action="{{ route('dashboard.guru.delete_raport', $raport->id) }}" method="POST" class="inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-xs font-semibold leading-tight text-red-500">Delete</button>
+                              </form>
+                            </td>
+                        </tr>
+                      @endforeach
                     </tbody>
                 </table>
             </div>
@@ -194,8 +237,5 @@
         </div>
       </div>
     </div>
-
-
-    
   </div>
 @endsection

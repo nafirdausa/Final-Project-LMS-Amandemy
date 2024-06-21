@@ -56,19 +56,12 @@
                                 <div class="mt-4">
                                     <label for="subject" class="block text-sm font-medium leading-6 text-black font-semibold">Mata Pelajaran</label>
                                     <div class="mt-2">
-                                    <select id="subject" name="subject" autocomplete="subject-name" class="block w-full rounded-lg border py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600  sm:text-sm sm:leading-6">
-                                        <option value="{{ $ujian->subject }}" selected>{{ $ujian->subject }}</option>
-                                        <option>Statistika</option>
-                                        <option>Kimia Dasar</option>
-                                        <option>Fisika Kuantum</option>
-                                    </select>
-                                    </div>
-                                </div>
-                            
-                                <div class="mt-4">
-                                    <label for="nilai" class="block text-sm font-medium leading-6 text-black font-semibold">Nilai</label>
-                                    <div class="mt-2">
-                                        <input type="number" name="nilai" id="nilai" value="{{ $ujian->nilai }}" autocomplete="given-name" class="block w-full rounded-lg border py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                        <select id="subject" name="subject" autocomplete="subject-name" class="block w-full rounded-lg border py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600  sm:text-sm sm:leading-6">
+                                            <option value="" disabled selected>Silahkan Pilih</option>
+                                            @foreach($kelas as $k)
+                                                <option value="{{ $k->id }}">{{ $k->nama_mapel }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>

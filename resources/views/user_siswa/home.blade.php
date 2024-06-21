@@ -19,37 +19,41 @@
 
     <section class="mb-8">
         <h2 class="text-3xl font-bold mb-4">Courses</h2>
-        @foreach ($clases as $class)
-            <section class="text-2xl text-gray-700 mb-4">{{ $class->tahun_ajaran }}</section>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="border border-gray-500 rounded-lg">
-                        <a href="{{ route('dashboard.siswa.detail_course') }}">
-                            <div class="mb-4">
-                                <img src="/assets/images/pattern-course.png" alt="" class="w-full">
-                            </div>
-                            <h5 class="text-lg px-4 text-gray-500">{{ $class->nama_mapel }}</h5>
-                            <h5 class="text-lg px-4 mb-4">{{ $class->nama_kelas }}</h5>
-                            <div class="relative pt-1 px-4">
-                                <div class="overflow-hidden p-2 h-2 mb-4 text-xs flex rounded-lg bg-blue-500">
-                                    <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500" style="width: 14%;">100% complete</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            @foreach ($clases as $class)
+                <div class="border border-gray-500 rounded-lg">
+                    <a href="{{ route('dashboard.siswa.detail_course', ['id' => $class->id]) }}">
+                        <div class="mb-4">
+                            <img src="/assets/images/pattern-course.png" alt="" class="w-full">
+                        </div>
+                        <h5 class="text-lg px-4 text-gray-500">{{ $class->nama_mapel }}</h5>
+                        <h5 class="text-lg px-4">{{ $class->nama_kelas }}</h5>
+                        <h6 class="text-sm px-4 text-gray-400">{{ $class->tahun_ajaran }}</h6>
+                        <h6 class="text-sm px-4 mb-4 text-gray-400">{{ $class->nama_pengajar }}</h6>
+                    </a>
                 </div>
-            </section>
-            <section>
-                <h2 class="text-3xl font-bold mb-4">Recently Accessed Courses</h2>
-                <div class="flex justify-center overflow-x-auto space-x-4 border border-gray-500 rounded-lg p-5">
-                    <div class="grid grid-cols-1 md:grid-cols-1 border border-gray-500 rounded-lg">
+            @endforeach
+        </div>
+    </section>
+
+    <section>
+        <h2 class="text-3xl font-bold mb-4">Recently Accessed Courses</h2>
+        <div class="flex justify-center overflow-x-auto space-x-4 border border-gray-500 rounded-lg p-5">
+            @if($lastAccessedCourse)
+                <div class="border border-gray-500 rounded-lg">
+                    <a href="{{ route('dashboard.siswa.detail_course', ['id' => $class->id]) }}">
                         <div class="mb-4">
                             <img src="/assets/images/pattern-course.png" alt="">
                         </div>
-                        <h5 class="text-lg px-4 text-gray-500">{{ $class->nama_mapel }}</h5>
-                        <h5 class="text-lg px-4 mb-4">{{ $class->nama_kelas }}</h5>
-                    </div>
+                        <h5 class="text-lg px-4 text-gray-500">{{ $lastAccessedCourse->nama_mapel }}</h5>
+                        <h5 class="text-lg px-4">{{ $lastAccessedCourse->nama_kelas }}</h5>
+                        <h6 class="text-sm px-4 text-gray-400">{{ $lastAccessedCourse->tahun_ajaran }}</h6>
+                        <h6 class="text-sm px-4 mb-4 text-gray-400">{{ $lastAccessedCourse->nama_pengajar }}</h6>
+                    </a>
                 </div>
-            </section>
-        @endforeach
+            @else
+                <p>No recently accessed courses.</p>
+            @endif
+        </div>
     </section>
 @endsection
