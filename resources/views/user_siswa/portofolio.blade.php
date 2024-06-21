@@ -66,7 +66,7 @@
         </p>
         <div class="project-cards flex gap-5 justify-center flex-wrap">
             @foreach ($portofolios as $portofolio)    
-                <div class="card w-72 card-border rounded-lg overflow-hidden bg-white text-left" style="border: 1px solid #ccc">
+                <div class="card w-72 card-border rounded-lg overflow-hidden bg-white text-left border-solid border-2 border-indigo-600" >
                     <img src="{{ asset($portofolio->gambar) }}" alt="Project Image" class="w-full">
                     <div class="flex flex-col justify-between">
                         <div class="p-2">

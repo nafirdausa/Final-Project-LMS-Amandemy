@@ -36,29 +36,30 @@
             animation: fadeUp 2s ease-out forwards;
         }   
 
-        .btn {
+        .btn-login {
              display: inline-block;
              border-radius: 4px;
              background-color: #19269b;
              border: none;
              color: #FFFFFF;
              text-align: center;
-             font-size: 17px;
-             padding: 10px;
+             font-size: 16  px;
+             font-weight: bold;
+             padding: 7px;
              width: 90px;
              transition: all 0.5s;
              cursor: pointer;
              margin: 5px;
         }
 
-        .btn a {
+        .btn-login a {
             cursor: pointer;
             display: inline-block;
             position: relative;
             transition: 0.5s;
         }
 
-        .btn a:after {
+        .btn-login a:after {
             content: '»';
             position: absolute;
             opacity: 0;
@@ -67,13 +68,82 @@
             transition: 0.5s;
         }
 
-        .btn:hover a {
+        .btn-login:hover a {
             padding-right: 15px;
         }
 
-        .btn:hover a:after {
+        .btn-login:hover a:after {
             opacity: 1;
             right: 0;
+        }
+
+        .btn-on {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            padding-block: 0.5rem;
+            padding-inline: 1.25rem;
+            background-color: rgb(0 107 179);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffff;
+            gap: 10px;
+            font-weight: bold;
+            border: 3px solid #ffffff4d;
+            outline: none;
+            overflow: hidden;
+            font-size: 20px;
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .btn-on:hover {
+            transform: scale(1.05);
+            border-color: #fff9;
+        }
+        
+        .btn-on:hover .icon {
+            transform: translate(4px);
+        }
+        
+        .btn-on:hover::before {
+            animation: shine 1.5s ease-out infinite;
+        }
+        
+        .btn-on::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100%;
+            background-image: linear-gradient(
+              120deg,
+              rgba(255, 255, 255, 0) 30%,
+              rgba(255, 255, 255, 0.8),
+              rgba(255, 255, 255, 0) 70%
+            );
+            top: 0;
+            left: -100px;
+            opacity: 0.6;
+        }
+
+        @keyframes shine {
+            0% {
+              left: -100px;
+            }
+          
+            60% {
+              left: 100%;
+            }
+          
+            to {
+              left: 100%;
+            }
         }
     </style>
 </head>
@@ -95,11 +165,11 @@
                 <a href="{{ route('dashboard.siswa.forum') }}" class="ms-4 text-gray-600 hover:text-blue-700 active:text-blue-700">Forum</a>
                 <div class="profile ml-4">
                     <button class="text-white font-semibold rounded inline-flex items-center" type="button" id="dropdownButton">
-                        <img src="{{asset('assets/images/default_profile.png')}}" alt="Profile Picture" class="w-10 h-10 rounded-full">
+                        <img src="{{asset('assets/images/user.png')}}" alt="Profile Picture" class="w-10 h-10 rounded-full">
                     </button>
-                    <div class="dropdown-menu absolute right-3 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden" id="dropdownMenu">
+                    <div class="dropdown-menu absolute right-3 rounded-md shadow-lg bg-red ring-1 ring-black ring-opacity-5 hidden" id="dropdownMenu">
                         <div class="py-1">
-                            <a href="{{ route('logout') }}" class="block px-4 py-1 text-sm text-gray-700 hover:bg-red-500">Logout</a>
+                            <a href="{{ route('logout') }}" class="block px-4 py-1 text-sm text-black fw-bold hover:bg-red-500" style="font-weight: bold">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -110,8 +180,8 @@
                 <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Portofolio</a>
                 <a href="{{ route('dashboard.siswa.forum') }}" class="ms-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Portofolio</a>
                 <div>
-                    <button class="btn">
-                        <a href="{{ route('login') }}" class="">Login</a>
+                    <button class="btn-login">
+                        <a href="{{ route('login') }}">Login</a>
                     </button>
                 </div>
             @endauth
@@ -130,16 +200,16 @@
                     Ringroad Barat, Banyuraden, Gamping, Sleman, Yogyakarta</p>
             </div>
             <div class="mb-4 md:mt-0">
-                <h3 class="text-xl mb-2">Instansi</h3>
+                <h3 class="text-xl mb-2" style="font-weight: bold">INSTANSI</h3>
                 <ul class="list-none space-y-2">
-                    <li><a href="#" class="text-white hover:underline">SMA N 2 Mandrehe</a></li>
-                    <li><a href="#" class="text-white hover:underline">IPA</a></li>
-                    <li><a href="#" class="text-white hover:underline">IPS</a></li>
-                    <li><a href="#" class="text-white hover:underline">Bahasa</a></li>
+                    <li><a href="#" class="text-white hover:underline">SMA</a></li>
+                    <li><a href="#" class="text-white hover:underline">SMU</a></li>
+                    <li><a href="#" class="text-white hover:underline">SMK</a></li>
+                    <li><a href="#" class="text-white hover:underline">UNIVERSITAS</a></li>
                 </ul>
             </div>
             <div class="mb-4 md:mt-0">
-                <h3 class="text-xl mb-2 fw-bold">Ikuti Kami</h3>
+                <h3 class="text-xl mb-2" style="font-weight: bold">IKUTI KAMI</h3>
                 <div>
                     <button class="p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
                         <svg class="w-5 h-5 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
@@ -154,10 +224,10 @@
                 </div>
             </div>
             <div class="mb-4 md:mt-0 max-w-xs">
-                <h3 class="text-xl mb-2">SMA Negeri 2 Mandrehe</h3>
+                <h3 class="text-xl mb-2" style="font-weight: bold">KONTAK</h3>
                 <p>Jl. Silangkar km 07 Ringroad Barat, Banyuraden, Gamping, Sleman, Yogyakarta</p>
                 <p>Phone: +62-251-025-540</p>
-                <p>Email: mnd@smadesu.id</p>
+                <p>Email: studyroom@gmail.com</p>
             </div>
         </div>
         <div class="text-center bg-blue-950 p-2">
