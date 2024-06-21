@@ -179,7 +179,7 @@
                 <a href="{{ route('dashboard.siswa.course') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Course</a>
                 <a href="{{ route('dashboard.siswa.report') }}" class="mr-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Report</a>
                 <a href="{{ route('dashboard.siswa.portofolio') }}" class="text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Portofolio</a>
-                <a href="{{ route('dashboard.siswa.forum') }}" class="ms-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Portofolio</a>
+                <a href="{{ route('dashboard.siswa.forum') }}" class="ms-4 text-gray-600 hover:text-blue-700 active:text-blue-700 font-semibold">Forum</a>
                 <div>
                     <button class="btn-login">
                         <a href="{{ route('login') }}">Login</a>
